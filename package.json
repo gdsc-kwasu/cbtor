@@ -4,7 +4,11 @@
   "description": "A web based CBT application for KWASU Engineering and Sciences freshers",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "asset": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-asset": "npm run asset -- --watch",
+    "start": "concurrently -n server,asset \" npm run server\" \"npm run watch-asset \" -c green.bold,blue.bold",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,25 @@
   "bugs": {
     "url": "https://github.com/kwasu-ng/cbtor/issues"
   },
-  "homepage": "https://github.com/kwasu-ng/cbtor#readme"
+  "homepage": "https://github.com/kwasu-ng/cbtor#readme",
+  "dependencies": {
+    "dotenv": "8.1.0",
+    "express": "4.17.1",
+    "mongoose": "5.7.1",
+    "pug": "2.0.4",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "7.0.0",
+    "concurrently": "4.1.2",
+    "cross-env": "6.0.0",
+    "laravel-mix": "4.1.4",
+    "nodemon": "1.19.2",
+    "resolve-url-loader": "3.1.0",
+    "sass": "1.22.12",
+    "sass-loader": "7.3.1",
+    "webpack": "4.40.2",
+    "webpack-cli": "3.3.9"
+  }
 }

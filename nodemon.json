@@ -1,0 +1,8 @@
+{
+  "verbose": false,
+  "ignore": [
+    "assets/*",
+    "public",
+    ".env.example"
+  ]
+}

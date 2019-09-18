@@ -1,0 +1,27 @@
+{
+  "name": "cbtor",
+  "version": "0.0.0",
+  "description": "A web based CBT application for KWASU Engineering and Sciences freshers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwasu-ng/cbtor.git"
+  },
+  "keywords": [
+    "cbt",
+    "web",
+    "exam",
+    "student",
+    "pass",
+    "question"
+  ],
+  "author": "Developer Student Club KWASU <team@dsckwasu.club> (https://github.com/kwasu-ng)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kwasu-ng/cbtor/issues"
+  },
+  "homepage": "https://github.com/kwasu-ng/cbtor#readme"
+}

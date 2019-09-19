@@ -32,5 +32,11 @@ run this command to build the asset (you can find out more about the npm script 
 ```npm
 npm run asset
 ```
-- Backend developer should just focus on the server implementation only.
--
+- Backend developer should just focus on the server implementation only. You can start the server only by running
+```sh
+npm run server
+```
+- You can run the server and asset watching together with
+```sh
+npm start
+```

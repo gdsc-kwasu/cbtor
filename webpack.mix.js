@@ -8,6 +8,7 @@ const mix = require('laravel-mix');
 * it will go to, obviously the public js folder.
 * */
 mix.react('assets/js/pages/register.jsx', 'public/js/app.js')
+    .react('assets/js/pages/login.jsx', 'public/js/login.js')
 /*
     * Same format as the react file, but instead, for compiling
     * scss/sass files. obviously to the public css folder.

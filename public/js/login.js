@@ -131,14 +131,35 @@ function (_Component) {
     _classCallCheck(this, Login);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Login).call(this, props));
-    _this.state = {};
+    _this.state = {
+      email: '',
+      password: ''
+    };
     return _this;
   }
 
   _createClass(Login, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "login"
+      }, "LOGIN TO YOUR ACCOUNT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        action: "#",
+        method: "post",
+        className: "form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "email",
+        className: "input-value py-2 pl-3",
+        placeholder: "Enter your email address",
+        required: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "password",
+        name: "password",
+        className: "input-value py-2 pl-3",
+        placeholder: "Enter your password",
+        required: true
+      }))));
     }
   }]);
 

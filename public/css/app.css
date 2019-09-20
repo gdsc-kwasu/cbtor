@@ -1,5 +1,16 @@
 /**fonts**/
 
+body {
+  font-family: "Oxygen", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Oxygen", sans-serif;
+}
+
 .welcome-section {
   background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url("/images/team.jpeg");
   background-position: center;
@@ -125,16 +136,5 @@
   .form {
     padding-bottom: 20px;
   }
-}
-
-body {
-  font-family: "Oxygen", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Oxygen", sans-serif;
 }
 

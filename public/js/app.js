@@ -29463,8 +29463,8 @@ if (false) {} else {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\codeLeaf\Desktop\cbtor\assets\js\pages\register.jsx */"./assets/js/pages/register.jsx");
-module.exports = __webpack_require__(/*! C:\Users\codeLeaf\Desktop\cbtor\assets\sass\app.scss */"./assets/sass/app.scss");
+__webpack_require__(/*! C:\Users\Seven\documents\codes\projects\kwdsc\cbtor\assets\js\pages\register.jsx */"./assets/js/pages/register.jsx");
+module.exports = __webpack_require__(/*! C:\Users\Seven\documents\codes\projects\kwdsc\cbtor\assets\sass\app.scss */"./assets/sass/app.scss");
 
 
 /***/ })

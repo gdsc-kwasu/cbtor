@@ -1,11 +1,140 @@
+/**fonts**/
+
+.welcome-section {
+  background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url("/images/team.jpeg");
+  background-position: center;
+  padding-left: 180px;
+  padding-right: 180px;
+  line-height: 40px;
+}
+
+.welcome {
+  padding-top: 150px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.welcome-content {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.home-bg {
+  background-size: contain;
+  background-position: right;
+}
+
+.register-section {
+  background-color: #ffffff;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.form {
+  padding-bottom: 100px;
+}
+
+.register {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.input-value {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ada8a8;
+  border-radius: 5px;
+  color: #828282;
+  font-size: 14px;
+}
+
+.input-value:focus {
+  border: 1px solid #3cb89c;
+  border-radius: 5px;
+  outline: none;
+}
+
+.field-icon {
+  margin-left: -40px;
+  margin-top: 30px;
+  position: relative;
+  color: #828282;
+}
+
+.coupon {
+  font-size: 12px;
+  color: #3cb89c;
+}
+
+.btn-block,
+.btn-block:hover {
+  background-color: #3cb89c;
+  font-weight: bold;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.forgot {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 0px;
+  color: #828282;
+}
+
+.link,
+.link:hover {
+  color: #3a96d8;
+  text-decoration: none;
+}
+
+/**mobile view**/
+
+@media (max-width: 575.98px) {
+  .home-bg {
+    background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url("/images/team.jpeg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .welcome-section {
+    margin-top: 20px;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .welcome {
+    font-size: 26px;
+    padding-top: 20px;
+  }
+
+  .welcome-content {
+    display: none;
+  }
+
+  .register {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .forgot {
+    display: inline;
+  }
+
+  .form {
+    padding-bottom: 20px;
+  }
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 

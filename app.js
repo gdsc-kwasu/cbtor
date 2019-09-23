@@ -24,6 +24,12 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/login', (req, res) => {
+    res.render('login', {
+        title: 'CBTor &mdash; Login Page',
+    });
+});
+
 app.post('/contact', (req, res) => {
     res.send(JSON.stringify(req.body))
 });

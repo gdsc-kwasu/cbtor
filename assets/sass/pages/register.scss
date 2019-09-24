@@ -1,3 +1,5 @@
+$gray: #c4c4c4;
+
 .welcome-section{
     background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
     background-position: center;
@@ -12,7 +14,7 @@
     color: $white;
 }
 .welcome-content{
-    font-size: $mobile-head;
+    font-size: 23px;
     color: $white;
 }
 .home-bg{
@@ -29,15 +31,15 @@
 }
 .register{
     font-weight: bold;
-    font-size: $web-head;
+    font-size: 23px;
 }
 .input-value{
     width: 100%;
     background-color: $white;
-    border: 1px solid $super-gray;
+    border: 1px solid $gray-500;
     border-radius: 5px;
     color: $gray;
-    font-size: $input-size;
+    font-size: 16px;
     &:focus{
         border: 1px solid $green;
         border-radius: 5px;
@@ -52,17 +54,17 @@
     
 }
 .coupon{
-    font-size: $mobile-body;
+    font-size: 23px;
     color: $green;
 }
 .btn-block, .btn-block:hover{
     background-color: $green;
     font-weight: bold;
-    font-size: $mobile-body;
+    font-size: 23px;
     color: $white;
 }
 .forgot{
-    font-size: $mobile-body;
+    font-size: 23px;
     font-weight: bold;
     line-height: 0px;
     color: $gray;
@@ -87,7 +89,7 @@
         padding-right: 0px;
     }
     .welcome{
-        font-size: $web-head;
+        font-size: 23px;
         padding-top: 20px;
     }
     .welcome-content{

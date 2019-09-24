@@ -16,4 +16,5 @@ mix.react('assets/js/pages/register.jsx', 'public/build/js/app.js')
     * NOTE: You can use it to combine css too, not importantly scss files.
     * Read more on mix at https://laravel-mix.com/
     * */
+    .sass('assets/sass/bootstrap.scss', 'public/build/css/bs.css')
     .sass('assets/sass/app.scss', 'public/build/css/app.css');

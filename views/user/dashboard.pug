@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  h1 Welcome #{user.firstName}
+  h4 Your email is #{user.email}
+  a(href="/logout") Sign Out

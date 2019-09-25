@@ -1,0 +1,7 @@
+$browser-context: 16; // Default
+
+// For converting px -> em
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+

@@ -1,5 +1,5 @@
-const app = require('./app');
 const path = require('path');
+// Load configurations stored on .env to node env.
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 const dbConnect = require('./connect');
 
@@ -9,8 +9,10 @@ const dbConnect = require('./connect');
 dbConnect(process.env.DATABASE);
 require('./models/user');
 
-const PORT = process.env.PORT;
+// Call in our express application.
+const app = require('./app');
 
+const PORT = process.env.PORT;
 app.listen(PORT,
     () => console.log(`App now listening on ${PORT}`)
 );

@@ -1,25 +1,36 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: true,
+        required: "We want your first name.",
     },
     lastName: {
         type: String,
-        required: true,
+        required: "Tell us your last name too.",
     },
     email: {
         type: String,
-        required: true,
-        unique: true
+        required: "An email is required.",
+        unique: true,
+        validate: [validator.isEmail, 'That is not a valid email.'],
     },
     phone: {
         type: String,
-        required: true,
+        required: "Phone number is required.",
         unique: true
     },
 });
 
+/*
+* Fuse User schema with Passport Local Mongoose for Passport
+* Authentication.
+* */
+userSchema.plugin(passportLocalMongoose,
+    { usernameField: 'email' });
+
 const User = mongoose.model('User', userSchema);
+
 module.exports = User;

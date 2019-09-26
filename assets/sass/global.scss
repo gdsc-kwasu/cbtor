@@ -2,3 +2,15 @@
 * Effects the login and register background overlay visible
 * on web view only.
 */
+.app-bg{
+    background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
+    background-position: center;
+}
+
+
+@media (max-width: 767.98px){
+    .container-fluid{
+        background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
+        background-position: center;
+    }
+}

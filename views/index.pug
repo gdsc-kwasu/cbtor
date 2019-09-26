@@ -1,13 +1,17 @@
 extends layout
 
 block content
-  div.container-fluid.home-bg.pb-5.pb-md-0
-    div.row
-      div.col-md-7.col-0.py-md-5.py-2.welcome-section
-        p.welcome WELCOME TO THE CBT APP
-        p.welcome-content.mt-5 Giving you the real-life Computer Based Test experience
+  .container-fluid.pt-5.pt-md-0
+    .row.min-vh-100.align-items-center
+      .col-12.col-sm-8.col-md-7.d-none.bg-primary.min-vh-100.d-md-flex.align-items-center.app-bg
+        .row.justify-content-center
+          .col-md-10.offset-md-2.py-5.text-light
+            h1.hero-text Welcome to the Cbt App
+            p.mt-5.hero-text__info Giving you the real-life Computer Based Test experience
 
-      div.col-md-5.col-10.offset-1.offset-md-0.register-section.pt-md-5.py-3#register
+      .col-12.col-sm-12.col-md-5.min-vh-100.d-flex.align-items-center.px-2.px-md-5
+        .row
+          .col-10.offset-1.bg-white.px-5.pt-3.pt-md-0#register
         
   script(src='/build/js/app.js' type='text/javascript')
   script(src='/js/script.js' type='text/javascript')

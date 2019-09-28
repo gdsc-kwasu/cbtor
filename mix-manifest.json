@@ -2,5 +2,6 @@
     "/public/build/js/app.js": "/public/build/js/app.js",
     "/public/build/css/bs.css": "/public/build/css/bs.css",
     "/public/build/css/app.css": "/public/build/css/app.css",
+    "/public/build/js/dashboard.js": "/public/build/js/dashboard.js",
     "/public/build/js/login.js": "/public/build/js/login.js"
 }

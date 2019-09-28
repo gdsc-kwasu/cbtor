@@ -1,17 +1,16 @@
 extends layout
 
 block content
-  .container-fluid.pt-5.pt-md-0
-    .row.min-vh-100.align-items-center
-      .col-12.col-sm-8.col-md-7.d-none.bg-primary.min-vh-100.d-md-flex.align-items-center.app-bg
+  .container-fluid.pt-5.pt-md-0.register__container
+    .row
+      .col-12.col-sm-8.col-md-7.d-none.bg-primary.d-md-flex.align-items-center.app-bg
         .row.justify-content-center
           .col-md-10.offset-md-2.py-5.text-light
             h1.hero-text Welcome to the Cbt App
             p.mt-5.hero-text__info Giving you the real-life Computer Based Test experience
 
-      .col-12.col-sm-12.col-md-5.min-vh-100.d-flex.align-items-center.px-2.px-md-5
+      .col-12.col-sm-12.col-md-5.d-flex.align-items-center.px-2.px-md-5
         .row
-          .col-10.offset-1.bg-white.px-5.pt-3.pt-md-0#register
+          .col-10.offset-1.bg-white.px-5.py-5#register
         
   script(src='/build/js/app.js' type='text/javascript')
-  script(src='/js/script.js' type='text/javascript')

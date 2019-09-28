@@ -1,6 +1,11 @@
 extends ../layout
 
 block content
-  h1 Welcome #{user.firstName}
-  h4 Your email is #{user.email}
-  a(href="/logout") Sign Out
+  div#dashboard.page-header-fixed.sidemenu-closed-hidelogo.page-content-white.page-md.header-white.white-sidebar-color.logo-indigo
+  div.mt-5
+    h1 Welcome #{user.firstName}
+    h4 Your email is #{user.email}
+    a(href="/logout") Sign Out
+  
+
+  script(src='/build/js/dashboard.js' type='text/javascript')

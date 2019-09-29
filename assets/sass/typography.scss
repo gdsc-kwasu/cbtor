@@ -2,79 +2,18 @@
     font-size: em(50);
     font-weight: bolder;
     text-transform: uppercase;
+    color: $white;
 }
 
 .hero-text__info {
     font-size: em(22);
 }
 
-.field-icon {
-    margin-left: em(-40);
-    margin-top: em(30);
-    position: relative;
-    color: $gray-500;
+.block-title {
+    font-size: em(35);
 }
-
-.text-request {
-    color: $gray-500;
-    font-weight: bold;
-    line-height: em(20);
-}
-
-.horizontal-line {
-    border: 1px solid $white;
-}
-
-.nav-item {
-    border: 2px solid $green;
-    border-radius: 5px;
-}
-
-.nav-link h6 {
-    line-height: em(0);
-}
-
-.navbar-brand {
-    height: em(100);
-    width: em(100);
-    border-radius: 50%;
-    border: 3px solid $green;
-}
-
-.navbar h5 {
-    line-height: em(10);
-    color: $black;
-}
-
-.navbar p {
-    line-height: em(10);
-    color: $gray-500;
-    font-size: em(14);
-}
-
-.sidebar__btn--btn {
-    background-color: transparent;
-    border: em(0);
-    &:active {
-        border: em(0);
-        background-color: $white;
-    }
-}
-
-.sidebar__btn--btn h6 {
-    position: relative;
-    left: em(21);
-    &:hover {
-        background-color: $white;
-        color: $blue;
-        border-top-left-radius: em(20);
-        border-bottom-left-radius: em(20);
-    }
-}
-
-@media screen and (max-width: em(767.98)) {
-    .navbar-brand {
-        height: em(67);
-        width: em(67);
+@include media-breakpoint-down('sm') {
+    .block-title {
+        font-size: em(29);
     }
 }

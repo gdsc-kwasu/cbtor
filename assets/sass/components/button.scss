@@ -1,8 +1,21 @@
-.btn{
-    height: 48px;
+.btn-custom {
+    font-weight: bold;
+    font-size: em(19);
+    padding: em(10) em(20) !important;
+
+    &:active, &:focus {
+        outline: none;
+    }
 }
-@media (max-width: 767.98px){
-    .btn{
-        height: 33px;
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: em(19);
+    padding: em(10) em(20) !important;
+
+    &:active, &:focus {
+        outline: none;
     }
 }

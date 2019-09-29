@@ -1,11 +1,29 @@
+@include media-breakpoint-down('sm') {
+    body {
+        font-size: 13px;
+    }
+}
+
 /*
 * Effects the login and register background overlay visible
 * on web view only.
 */
-
 .app-bg {
     background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
     background-position: center;
+}
+
+@include media-breakpoint-down('sm') {
+    .bg-student-sm {
+        background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
+        background-position: center;
+        padding: 20px 40px;
+    }
+
+    .bg-student-sm__container {
+        background-color: $white;
+        padding: 20px 5px;
+    }
 }
 
 @media (max-width: 767.98px) {

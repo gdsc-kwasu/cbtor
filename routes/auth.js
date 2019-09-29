@@ -30,6 +30,11 @@ router.get('/login', controller.redirectIfAuthenticated, (req, res) => {
 });
 
 /*
+* Handles POST Request to log the user in
+* */
+router.post('/login', controller.logUserIn);
+
+/*
 * Handles the logout call
 * */
 router.get('/logout', controller.isAuth, controller.logout);

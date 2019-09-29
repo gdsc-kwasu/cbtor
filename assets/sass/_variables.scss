@@ -62,8 +62,8 @@ $colors: map-merge(
                 $colors
 );
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       $green !default;
+$secondary:     $gray-500 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -158,7 +158,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $gray-500 !default;
 
 
 // Links
@@ -296,7 +296,7 @@ $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        $font-family-heading !default;
 $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              null !default;
+$headings-color:              $black !default;
 
 $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;

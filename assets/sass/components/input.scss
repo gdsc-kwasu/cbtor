@@ -1,18 +1,13 @@
-.form-effect {
-    width: 100%;
-    height: 48px;
-    border: 1px solid $gray-500;
-    border-radius: 5px;
+.form-control {
+    padding: em(23) em(10) em(23) em(18);
     color: $gray-500;
-    font-size: 16px;
-    &:focus {
-        border: 1px solid $green;
-        outline: none;
-    }
-}
+    border: 1px solid $gray-500;
+    font-size: em(18);
 
-@media (max-width: 767.98px) {
-    .form-effect {
-        height: 33px;
+    &:active, &:focus {
+        color: $gray-500;
+        border: 1px solid $primary;
+        box-shadow: none;
+        outline: none;
     }
 }

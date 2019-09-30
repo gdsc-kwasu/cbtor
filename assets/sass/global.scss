@@ -50,6 +50,10 @@
     border-radius: 50%;
 }
 
+.icon-wallet {
+    font-size: 25px;
+    color: $primary;
+}
 
 // Make Navbar slide from left instead of top
 @media (max-width: 768px) {

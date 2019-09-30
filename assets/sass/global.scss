@@ -11,6 +11,7 @@
 .app-bg {
     background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
     background-position: center;
+    height: 100%;
 }
 
 @include media-breakpoint-down('sm') {

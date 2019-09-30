@@ -30,22 +30,51 @@ class Register extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div>
-                    <h2 className="font-weight-bold">REGISTER FOR AN ACCOUNT</h2>
-                    <form action="#" method="post" className='form'>
-                        <input type="text" value={this.state.firstName} onChange={this.handleChange} name= 'firstName' className='form-effect pl-4 mt-3' placeholder='First name' required />
-                        <input type="text" value={this.state.lastName} onChange={this.handleChange} name= 'lastName' className='form-effect pl-4 mt-3' placeholder='Last name' required />
-                        <input type="email" value={this.state.email} onChange={this.handleChange} name= 'email' className='form-effect pl-4 mt-3' placeholder='Email' required />
-                        <input type='tel' value={this.state.phone} onChange={this.handleChange} name= 'phone' className='form-effect pl-4 mt-3' placeholder='Phone' required />
-                        <input id="password-field" value={this.state.password} onChange={this.handleChange} name= 'password' type="password" class="form-effect pl-4 mt-3 pr-5" placeholder="Password" required />
-                        <span onClick={this.handleClick} className='fa field-icon fa-eye'></span>
-                        <h6 className="text-success ml-5 mt-3">Enter your Coupon code</h6>
-                        <input type="number" value={this.state.coupon} onChange={this.handleChange} name= 'coupon' className='form-effect pl-4' placeholder='Coupon code' required />
-                        <button className="btn btn-success btn-block mt-3">Sign Up</button>
-                        <p className='text-request mt-4'>Forgot Password? <a href="#">Click here</a></p>
-                        <p className='text-request'>Have an account? <a href="#">Sign in</a></p>
-                    </form>
-                </div>
+                <form action="#">
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <input type="text" name="firstName" className="form-control" placeholder="First name"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <input type="text" name="lastName" className="form-control" placeholder="Last name"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <input type="email" name="email" className="form-control" placeholder="Email"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <input type="text" name="phone" className="form-control" placeholder="Phone"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <input type="password" name="password" className="form-control" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <label htmlFor="coupon" className="text-primary">Enter your Coupon</label>
+                            <input type="text" name="coupon" className="form-control" placeholder="--- ---- ----" id="coupon"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <button className="btn btn-primary btn-custom btn-block">Sign Up</button>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group col-12">
+                            <span className="font-weight-bold">
+                                Have an Account? <a href="/login">Sign in</a>.
+                            </span>
+                        </div>
+                    </div>
+                </form>
             </React.Fragment>
          );
     }
@@ -53,4 +82,4 @@ class Register extends Component {
  
 export default Register;
 
-ReactDOM.render(<Register />, document.getElementById('register'))
+ReactDOM.render(<Register />, document.getElementById('app'));

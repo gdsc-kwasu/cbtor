@@ -1,16 +1,25 @@
 extends layout
 
 block content
-  .container-fluid.pt-5.pt-md-0.register__container
+  .container-fluid
     .row
-      .col-12.col-sm-8.col-md-7.d-none.bg-primary.d-md-flex.align-items-center.app-bg
+      .col-12.col-sm-8.col-md-7.d-none.bg-primary.d-md-flex.align-items-center.position-fixed.app-bg
         .row.justify-content-center
           .col-md-10.offset-md-2.py-5.text-light
             h1.hero-text Welcome to the Cbt App
             p.mt-5.hero-text__info Giving you the real-life Computer Based Test experience
 
-      .col-12.col-sm-12.col-md-5.d-flex.align-items-center.px-2.px-md-5
-        .row
-          .col-10.offset-1.bg-white.px-5.py-5#register
+    .row.justify-content-end.py-0.py-md-5
+      .col-12.col-sm-12.col-md-5.d-block.d-md-flex.align-items-center.px-md-4.bg-student-sm
+        .row.d-flex.d-md-none.text-white.my-4
+          .col-12.text-center.text-white
+            h3.text-uppercase.text-white Welcome to the CBT App
+            p Giving you the real-life Computer Based Test experience
+
+        .row.px-5.bg-student-sm__container
+          .col-12
+            h1.text-uppercase.font-weight-bolder.block-title Login to your Account
+          .col-12.py-5
+            #app
         
   script(src='/build/js/app.js' type='text/javascript')

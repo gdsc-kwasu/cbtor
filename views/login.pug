@@ -2,14 +2,15 @@ extends layout
 
 block content
   .container-fluid
-    .row.min-vh-100.align-items-center
-      .col-12.col-sm-8.col-md-7.d-none.bg-primary.min-vh-100.d-md-flex.align-items-center.app-bg
+    .row
+      .col-12.col-sm-8.col-md-7.d-none.bg-primary.d-md-flex.align-items-center.position-fixed.app-bg
         .row.justify-content-center
           .col-md-10.offset-md-2.py-5.text-light
             h1.hero-text Welcome to the Cbt App
             p.mt-5.hero-text__info Giving you the real-life Computer Based Test experience
 
-      .col-12.col-sm-12.col-md-5.min-vh-100.d-block.d-md-flex.align-items-center.px-md-4.bg-student-sm
+    .row.justify-content-end.py-0.py-md-5.min-vh-100
+      .col-12.col-sm-12.col-md-5.d-block.d-md-flex.align-items-center.px-md-4.bg-student-sm
         .row.d-flex.d-md-none.text-white.my-4
           .col-12.text-center.text-white
             h3.text-uppercase.text-white Welcome to the CBT App
@@ -30,8 +31,8 @@ block content
                   input(type="password" name="password" class="form-control" id="password" placeholder="Enter your password")
               .form-row
                 .form-group.col-12
-                  span.font-weight-bold Forget Password?
-                     a(href="#") Click here
+                  span.font-weight-bold Forgot Password?
+                    a(href="#") Click here
               .form-row.mt-4
                 .form-group.col-12
                   button(type="submit" class="btn btn-success btn-custom btn-block") Sign In

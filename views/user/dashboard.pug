@@ -1,11 +1,15 @@
 extends ../layout
 
 block content
-  div#dashboard.page-header-fixed.sidemenu-closed-hidelogo.page-content-white.page-md.header-white.white-sidebar-color.logo-indigo
-  div.mt-5
-    h1 Welcome #{user.firstName}
-    h4 Your email is #{user.email}
-    a(href="/logout") Sign Out
-  
+  #app
+  .modal.fade#logout-modal
+    .modal-dialog.modal-sm.modal-dialog-centered
+      .modal-content.px-3.py-4.text-center
+        h4 Log Out Account?
+        div.py-3
+          a(href="/logout" class="btn btn-sm btn-success mx-3 px-4 font-weight-bold") Yes
+          a(href="#" data-dismiss="modal" class="btn btn-sm btn-outline-success mx-3 px-4 font-weight-bold") No
+
+
 
   script(src='/build/js/dashboard.js' type='text/javascript')

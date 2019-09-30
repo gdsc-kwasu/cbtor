@@ -9,7 +9,7 @@ const mix = require('laravel-mix');
  * */
 mix.react('assets/js/pages/register.jsx', 'public/build/js/app.js')
     .react('assets/js/pages/login.jsx', 'public/build/js/login.js')
-    .react('assets/js/pages/dashboard.jsx', 'public/build/js/dashboard.js')
+    .react('assets/js/pages/dashboard.js', 'public/build/js/dashboard.js')
     /*
      * Same format as the react file, but instead, for compiling
      * scss/sass files. obviously to the public css folder.

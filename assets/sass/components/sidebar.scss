@@ -1,0 +1,66 @@
+.sidebar {
+  height: 100%;
+  position: fixed;
+  background-color: $blue;
+  color: $white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+@include media-breakpoint-down('sm') {
+  .sidebar {
+    display: none;
+  }
+}
+
+.sidebar__title {
+  font-size: em(50);
+  font-weight: bolder;
+  color: $white;
+}
+
+.sidebar__divider {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $white;
+}
+
+.sidebar__padded {
+  padding: 10px 60px;
+}
+
+.sidebar__top-spacer {
+  margin-top: 55px;
+}
+
+.sidebar__top-divider {
+  border-top: 1px solid $white;
+}
+
+.sidebar__list {
+  list-style: none;
+  text-align: left;
+  color: $white;
+  font-weight: bold;
+  margin-left: 35px;
+
+  & > li {
+    padding: 10px 12px;
+  }
+
+  & > li.active {
+    background-color: $white;
+    color: $blue;
+    border-radius: 15px 0 0 15px;
+
+    & a {
+      color: $blue;
+    }
+  }
+
+  & > li > a {
+    color: $white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

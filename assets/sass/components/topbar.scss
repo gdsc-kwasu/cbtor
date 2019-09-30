@@ -1,0 +1,10 @@
+.topbar {
+  padding: 50px 20px;
+  border-bottom: 1px solid $gray-200;
+}
+
+@include media-breakpoint-down('sm') {
+  .topbar {
+    display: none;
+  }
+}

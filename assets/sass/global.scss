@@ -33,3 +33,51 @@
         background-position: center;
     }
 }
+
+@include media-breakpoint-up('md') {
+    .navbar {
+        display: none;
+    }
+
+    .box-shadow{
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+
+// Make Navbar slide from left instead of top
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 50%;
+        height: 100%;
+        background-color: #fbfbfb;
+        z-index: 2000;
+    }
+    .navbar-collapse.collapsing {
+        height: 100%;
+        -webkit-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        transition: left 0.3s ease;
+        left: -100%;
+    }
+    .navbar-collapse.show {
+        left: 0;
+        -webkit-transition: left 0.3s ease-in;
+        -o-transition: left 0.3s ease-in;
+        -moz-transition: left 0.3s ease-in;
+        transition: left 0.3s ease-in;
+    }
+}

@@ -43,17 +43,14 @@
   font-weight: bold;
   margin-left: 35px;
 
-  & > li {
-    padding: 10px 12px;
-  }
+  & a {
+    display: block;
+    padding: 10px 20px;
 
-  & > li.active {
-    background-color: $white;
-    color: $blue;
-    border-radius: 15px 0 0 15px;
-
-    & a {
+    &.active {
+      background-color: $white;
       color: $blue;
+      border-radius: 20px 0 0 20px;
     }
   }
 

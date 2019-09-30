@@ -1,15 +1,36 @@
 import React from 'react';
+import { NavLink} from "react-router-dom";
 
 const SideBarNav = () => {
     return (
         <React.Fragment>
             <div className="sidebar__top-spacer">
                 <ul className="sidebar__list">
-                    <li className="active"><a href="#">Take Exam</a></li>
-                    <li><a href="#">Wallet</a></li>
-                    <li><a href="#">Scores</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Change Password</a></li>
+                    <li>
+                        <NavLink to="/dashboard" activeClassName="active">
+                            Take Exam
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/wallet" activeClassName="active">
+                            Wallet
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/score" activeClassName="active">
+                            Score
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/feedback" activeClassName="active">
+                            Feedback
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/password" activeClassName="active">
+                            Change Password
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </React.Fragment>

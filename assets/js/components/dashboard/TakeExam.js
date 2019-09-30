@@ -1,11 +1,12 @@
 import React from 'react';
-import LinkButton from './LinkButton';
+import LinkButton from '../LinkButton';
 
 const MainContent = () => {
     return (
         <div className="row px-md-3 py-md-3">
             <div className="col-12 col-md-8 box-shadow py-4">
                 <table className="table font-weight-bold text-dark table-borderless table-exam">
+                    <tbody>
                     <tr>
                         <td>GNS 101</td>
                         <td>USE OF ENGLISH</td>
@@ -104,6 +105,7 @@ const MainContent = () => {
                             <LinkButton href="#">Take Exam</LinkButton>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

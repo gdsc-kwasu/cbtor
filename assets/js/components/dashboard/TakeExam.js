@@ -1,119 +1,55 @@
 import React from 'react';
 import LinkButton from '../LinkButton';
+import LoaderSpinner from '../LoaderSpinner';
 
-const MainContent = () => {
-    return (
-        <div className="row px-md-3 py-md-3">
-            <div className="col-12 col-md-12 box-shadow py-4">
-                <div className="row">
-                    <div className="col-12 col-sm-10 col-md-8">
-                        <table className="table font-weight-bold text-dark table-borderless table-exam">
-                            <tbody>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 102</td>
-                                <td>USE OF ENGLISH II</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>GNS 101</td>
-                                <td>USE OF ENGLISH</td>
-                                <td>
-                                    <LinkButton href="#">Take Exam</LinkButton>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+class MainContent extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            courses: null,
+        }
+    }
+
+    componentDidMount() {
+        fetch('/api/courses')
+            .then(data => data.json())
+            .then(courses => this.setState({ courses }))
+            .catch(err => console.log(err))
+    }
+
+    render() {
+        const { courses } = this.state;
+        if (!courses) return <LoaderSpinner />;
+
+        const courseListing = courses.map(({ title, _id, code}) => {
+            return (
+                <tr key={_id}>
+                    <td>{code}</td>
+                    <td>{title}</td>
+                    <td>
+                        <LinkButton href={`/exam/${_id}`}>Take Exam</LinkButton>
+                    </td>
+                </tr>
+            );
+        });
+
+        return (
+            <div className="row px-md-3 py-md-3">
+                <div className="col-12 col-md-12 box-shadow py-4">
+                    <div className="row">
+                        <div className="col-12 col-sm-10 col-md-8">
+                            <table className="table font-weight-bold text-dark table-borderless table-exam">
+                                <tbody>
+                                    { courseListing }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+}
 
 export default MainContent;

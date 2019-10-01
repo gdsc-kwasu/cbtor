@@ -1,5 +1,6 @@
 .table-exam {
   font-size: em(15);
+  text-transform: uppercase;
   & tr {
     padding: 25px 10px;
     border-bottom: 1px solid $gray-200;

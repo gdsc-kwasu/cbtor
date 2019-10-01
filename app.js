@@ -58,7 +58,7 @@ app.use('/', require('./routes/auth'));
 app.get('/dashboard',
     (req, res, next) => {
         if (!req.user)
-            return res.redirect('login');
+            return res.redirect('/login');
         next();
     },
     (req, res) => {
@@ -66,7 +66,15 @@ app.get('/dashboard',
             title: 'Dashboard &mdash; CBTor'
         });
 });
+/*
+* Add routes for all API requests.
+* */
+app.use('/api', require('./routes/api'));
 
+/*
+* Handles routes that are not found or an error
+* occurred on processing requests.
+* */
 app.use((req, res) => {
     res.send('File not found');
 });

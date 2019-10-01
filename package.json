@@ -8,7 +8,8 @@
     "asset": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-asset": "npm run asset -- --watch",
     "start": "concurrently -n server,asset \" npm run server\" \"npm run watch-asset \" -c green.bold,blue.bold",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "db:seed": "node database/seeder/DatabaseSeeder.js"
   },
   "repository": {
     "type": "git",

@@ -25,9 +25,9 @@ class MainContent extends React.Component {
         const courseListing = courses.map(({ title, _id, code}) => {
             return (
                 <tr key={_id}>
-                    <td>{code}</td>
-                    <td>{title}</td>
-                    <td>
+                    <td className='px-0 px-sm-4'>{code}</td>
+                    <td className='px-2'>{title}</td>
+                    <td className='px-0 px-sm-4'>
                         <LinkButton href={`/exam/${_id}`}>Take Exam</LinkButton>
                     </td>
                 </tr>

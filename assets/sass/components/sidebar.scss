@@ -59,7 +59,7 @@
     }
 }
 
-@media screen and (max-width: 767.98px) {
+@include media-breakpoint-down('md') {
     .sidebar__padded {
         padding: 5px 30px;
     }
@@ -80,5 +80,11 @@
         border-radius: 50%;
         top: em(-25);
         left: em(-20);
+    }
+    .sidebar__list {
+        margin-left: 5px;
+        & a {
+            padding: 10px 10px;
+        }
     }
 }

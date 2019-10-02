@@ -2,8 +2,8 @@
     font-weight: bold;
     font-size: em(19);
     padding: em(10) em(20) !important;
-
-    &:active, &:focus {
+    &:active,
+    &:focus {
         outline: none;
     }
 }
@@ -14,14 +14,20 @@
     font-weight: bold;
     font-size: em(19);
     padding: em(10) em(20) !important;
-
-    &:active, &:focus {
+    &:active,
+    &:focus {
         outline: none;
     }
 }
 
 .btn--small {
     text-transform: uppercase;
-    font-size: em(12);
     font-weight: bold;
+}
+
+@include media-breakpoint-down('md') {
+    td,
+    .btn--small {
+        font-size: em(12);
+    }
 }

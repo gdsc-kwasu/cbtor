@@ -4,10 +4,12 @@
     }
 }
 
+
 /*
 * Effects the login and register background overlay visible
 * on web view only.
 */
+
 .app-bg {
     background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
     background-position: center;
@@ -20,7 +22,6 @@
         background-position: center;
         padding: 20px 40px;
     }
-
     .bg-student-sm__container {
         background-color: $white;
         padding: 20px 5px;
@@ -38,8 +39,7 @@
     .navbar {
         display: none;
     }
-
-    .box-shadow{
+    .box-shadow {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     }
 }
@@ -57,6 +57,9 @@
 
 // Make Navbar slide from left instead of top
 @media (max-width: 768px) {
+    .navbar {
+        background-color: #ffffff;
+    }
     .navbar-collapse {
         position: fixed;
         top: 0;
@@ -64,9 +67,9 @@
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 15px;
-        width: 50%;
+        width: 55%;
         height: 100%;
-        background-color: #fbfbfb;
+        background-color: #3496DA;
         z-index: 2000;
     }
     .navbar-collapse.collapsing {

@@ -3,11 +3,18 @@
     color: $gray-500;
     border: 1px solid $gray-500;
     font-size: em(18);
-
-    &:active, &:focus {
+    &:active,
+    &:focus {
         color: $gray-500;
         border: 1px solid $primary;
         box-shadow: none;
         outline: none;
     }
+}
+
+.field-icon {
+    float: right;
+    left: em(-20);
+    top: em(-35);
+    position: relative;
 }

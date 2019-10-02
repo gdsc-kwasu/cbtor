@@ -53,13 +53,14 @@ class Register extends Component {
                     </div>
                     <div className="form-row">
                         <div className="form-group col-12">
-                            <input type="password" name="password" className="form-control" placeholder="Password"/>
+                            <input type="password" name="password" className="form-control" id='password-field' placeholder="Password"/>
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" onClick={this.handleClick}></span>
                         </div>
                     </div>
                     <div className="form-row">
                         <div className="form-group col-12">
                             <label htmlFor="coupon" className="text-primary">Enter your Coupon</label>
-                            <input type="text" name="coupon" className="form-control" placeholder="--- ---- ----" id="coupon"/>
+                            <input type="text" name="coupon" className="form-control text-center" placeholder="---- ---- ----" id="coupon"/>
                         </div>
                     </div>
                     <div className="form-row">

@@ -20,11 +20,12 @@
     .bg-student-sm {
         background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');
         background-position: center;
-        padding: 20px 40px;
+        padding: 20px 25px;
     }
     .bg-student-sm__container {
         background-color: $white;
         padding: 20px 5px;
+        border-radius: 5px;
     }
 }
 

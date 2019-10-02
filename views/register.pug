@@ -18,8 +18,17 @@ block content
 
         .row.px-5.bg-student-sm__container
           .col-12
-            h1.text-uppercase.font-weight-bolder.block-title Login to your Account
+            h1.text-uppercase.font-weight-bolder.block-title Register for an Account
           .col-12.py-5
             #app
-        
+
+block scripts
   script(src='/build/js/app.js' type='text/javascript')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js")
+  if flashes.error
+    script.
+      const errors = !{JSON.stringify(flashes.error)}
+        errors.forEach(function(err) {
+            $.notify(err.msg, 'error');
+        })
+    

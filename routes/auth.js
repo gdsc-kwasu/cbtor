@@ -1,5 +1,6 @@
 const express = require('express');
 const controller = require('../controllers/authController');
+const registerRequestValidator = require('../validation/RegisterRule');
 
 const router = express.Router();
 
@@ -16,6 +17,7 @@ router.get('/register', controller.redirectIfAuthenticated, (req, res) => {
 * Sign up a new user.
 * */
 router.post('/register',
+    registerRequestValidator,
     controller.redirectIfAuthenticated,
     controller.createUser,
     controller.logUserIn);

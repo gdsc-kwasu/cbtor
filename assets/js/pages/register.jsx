@@ -30,7 +30,7 @@ class Register extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <form action="#">
+                <form action="/register" method="post">
                     <div className="form-row">
                         <div className="form-group col-12">
                             <input type="text" name="firstName" className="form-control" placeholder="First name"/>

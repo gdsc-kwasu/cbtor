@@ -1,63 +1,84 @@
 .sidebar {
-  height: 100%;
-  position: fixed;
-  background-color: $blue;
-  color: $white;
-  padding: 40px 0;
-  text-align: center;
+    height: 100%;
+    position: fixed;
+    background-color: $blue;
+    color: $white;
+    padding: 40px 0;
+    text-align: center;
 }
 
 @include media-breakpoint-down('sm') {
-  .sidebar {
-    display: none;
-  }
+    .sidebar {
+        display: none;
+    }
 }
 
 .sidebar__title {
-  font-size: em(50);
-  font-weight: bolder;
-  color: $white;
+    font-size: em(50);
+    font-weight: bolder;
+    color: $white;
 }
 
 .sidebar__divider {
-  padding-bottom: 15px;
-  border-bottom: 1px solid $white;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $white;
 }
 
 .sidebar__padded {
-  padding: 10px 60px;
+    padding: 10px 60px;
 }
 
 .sidebar__top-spacer {
-  margin-top: 55px;
+    margin-top: 55px;
 }
 
 .sidebar__top-divider {
-  border-top: 1px solid $white;
+    border-top: 1px solid $white;
 }
 
 .sidebar__list {
-  list-style: none;
-  text-align: left;
-  color: $white;
-  font-weight: bold;
-  margin-left: 35px;
-
-  & a {
-    display: block;
-    padding: 10px 20px;
-
-    &.active {
-      background-color: $white;
-      color: $blue;
-      border-radius: 20px 0 0 20px;
-    }
-  }
-
-  & > li > a {
+    list-style: none;
+    text-align: left;
     color: $white;
-    &:hover {
-      text-decoration: none;
+    font-weight: bold;
+    margin-left: 35px;
+    & a {
+        display: block;
+        padding: 10px 20px;
+        &.active {
+            background-color: $white;
+            color: $blue;
+            border-radius: 20px 0 0 20px;
+        }
     }
-  }
+    &>li>a {
+        color: $white;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .sidebar__padded {
+        padding: 5px 30px;
+    }
+    .sidebar__top-spacer {
+        margin-top: 20px;
+    }
+    .user--details,
+    .user--details h5 {
+        color: #ffffff;
+    }
+    .alarm-icon {
+        color: $green;
+        font-size: em(24);
+    }
+    .badge {
+        font-size: em(8);
+        position: relative;
+        border-radius: 50%;
+        top: em(-25);
+        left: em(-20);
+    }
 }

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 const passportLocalMongoose = require('passport-local-mongoose');
+const  Wallet = require('./Wallet');
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -24,8 +25,21 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+/*
+* Virtual fields declaration.
+* */
 userSchema.virtual('name').get(function() {
     return `${this.firstName} ${this.lastName}`;
+});
+
+/*
+* Create a wallet whenever a user account is created.
+* */
+userSchema.post('save', function(user) {
+    Wallet.create({
+        credit: 100,
+        user: user._id,
+    })
 });
 
 /*

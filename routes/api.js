@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { userInfo } = require('../controllers/userController');
 const { getAllCourses } = require('../controllers/courseController');
+const { getWalletBalance } = require('../controllers/walletController');
 
 const wait = (timeout = 2000) => {
   return  (req, res, next) => {
@@ -24,5 +25,7 @@ router.get('/me', wait(), userInfo);
 * Get all course from the database.
 * */
 router.get('/courses', wait(), getAllCourses);
+
+router.get('/wallet', wait(), getWalletBalance);
 
 module.exports = router;

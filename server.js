@@ -9,6 +9,7 @@ const dbConnect = require('./database/connect');
 dbConnect(process.env.DATABASE);
 require('./models/user');
 require('./models/course');
+require('./models/Wallet');
 require('./models/question');
 
 // Call in our express application.

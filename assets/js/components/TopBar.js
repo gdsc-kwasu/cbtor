@@ -1,21 +1,33 @@
-import React from 'react';
 import './LinkButton';
+import React from 'react';
+import PropTypes from 'prop-types';
 import LinkButton from "./LinkButton";
+import PulseLoader from '../components/PulseLoader';
 
-const TopBar = (props) => {
+const UserInfo = ({ firstName, lastName, email }) => {
+    return (
+        <div className="d-flex">
+            <img src="/images/mario.svg" alt="User name is here" className="user-avatar"/>
+            <div className="pt-3 pl-3">
+                <h5 className="font-weight-bold mb-0">
+                    { `${firstName} ${lastName}` }
+                </h5>
+                <small>{ email } 50 Exams taken</small>
+            </div>
+        </div>
+    );
+};
+
+const TopBar = ({ user }) => {
+    const { firstName, lastName, email } = user;
     return (
         <div className="topbar">
             <div className="row align-items-center">
                 <div className="col-6">
-                    <div className="d-flex">
-                        <img src="/images/mario.svg" alt="User name is here" className="user-avatar"/>
-                        <div className="pt-3 pl-3">
-                            <h5 className="font-weight-bold mb-0">
-                                Jimoh Lawal Olafimihan
-                            </h5>
-                            <small>cyberphym707@gmail.com 50 Exams taken</small>
-                        </div>
-                    </div>
+                    { user.email
+                        ? <UserInfo email={email} firstName={firstName} lastName={lastName}/>
+                        : <PulseLoader />
+                    }
                 </div>
                 <div className="col-6">
                     <LinkButton href="#" margin="mx-2">
@@ -31,6 +43,10 @@ const TopBar = (props) => {
             </div>
         </div>
     );
+};
+
+TopBar.propTypes = {
+    user: PropTypes.object.isRequired,
 };
 
 export default TopBar;

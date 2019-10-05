@@ -1,30 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SideBar from '../components/SideBar';
 import TopBar from '../components/TopBar';
 import NavBar from '../components/NavBar';
-import TakeExam from '../components/dashboard/TakeExam';
+import SideBar from '../components/SideBar';
 import Wallet from '../components/dashboard/Wallet';
 import Scores from '../components/dashboard/Scores';
 import Feedback from '../components/dashboard/Feedback';
+import TakeExam from '../components/dashboard/TakeExam';
 import Password from '../components/dashboard/Password';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            user: {},
+        }
+    }
+
+    componentDidMount() {
+        fetch('/api/me')
+            .then(data => data.json())
+            .then(user => this.setState({ user }))
     }
 
     render() {
+        const { user } = this.state;
         return (
             <div className="container-fluid">
                 <Router>
-                    <NavBar />
+                    <NavBar user={user}/>
                     { /* Sidebar goes in here */}
-                    <SideBar/>
+                    <SideBar />
                     <div className="row justify-content-end">
                         <div className="col-12 col-md-9">
-                            <TopBar />
+                            <TopBar user={user} />
                             <Route path="/dashboard" component={TakeExam} exact/>
                             <Route path="/wallet" component={Wallet} exact/>
                             <Route path="/score" component={Scores} exact/>

@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+userSchema.virtual('name').get(function() {
+    return `${this.firstName} ${this.lastName}`;
+});
+
 /*
 * Fuse User schema with Passport Local Mongoose for Passport
 * Authentication.

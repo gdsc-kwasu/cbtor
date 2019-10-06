@@ -76,7 +76,7 @@ app.use('/api', require('./routes/api'));
 * occurred on processing requests.
 * */
 app.use((req, res) => {
-    res.send('File not found');
+    res.render('error404');
 });
 
 module.exports = app;

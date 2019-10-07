@@ -1,17 +1,15 @@
 extends layout
 
 block content
-  .container-fluid
+  .container-fluid.mt-2.mt-md-5
     .container.d-flex.justify-content-center.align-items-center
-      .text-center
-        img(src="undraw_page_not_found_su7k.svg", height="220px" alt="Error 404")  
-        p.h2.font-weight-bold Page Not Found
-        p.text-justify We can't  find the page you are looking for.
-        p.text-justify You can either return to the previous page, visit our hompage
-        p or contact our support team
-        a(style="background: #3d3b63;" href="/").btn.mr-2.text-light Visit Homepage 
-        a(style="border: 1px solid #3d3b63;" href="/").btn Contact Us
-
-
-
-   
+    .text-center
+      img(src="/images/undraw_page_not_found_su7k.svg", height="220px" alt="Error 404")
+      p.h2.font-weight-bold Page Not Found
+      p We can't  find the page you are looking for.
+        br
+        | You can either return to the previous page, visit our hompage
+        br
+        | or contact our support team
+      a(style="background: #3d3b63;" href="/").btn.mr-2.text-light Visit Homepage
+      a(style="border: 1px solid #3d3b63;" href="/contact").btn Contact Us

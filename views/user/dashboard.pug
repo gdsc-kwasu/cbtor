@@ -12,4 +12,9 @@ block content
 
 
 
+block scripts
   script(src='/build/js/dashboard.js' type='text/javascript')
+  script.
+      $('.sidebar__list a').on('click', function (e) {
+          $('#navBarDashboard').collapse('toggle');
+      })

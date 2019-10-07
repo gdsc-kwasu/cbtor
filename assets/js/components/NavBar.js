@@ -35,12 +35,12 @@ const NavBar = ({ user }) => {
                     <small className="badge badge-danger">7</small>
                 </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        data-target="#navBarDashboard" aria-controls="navBarDashboard" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span className="fa fa-bars" />
                 </button>
 
-                <div className="collapse navbar-collapse px-0 py-0 mb-0" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse px-0 py-0 mb-0" id="navBarDashboard">
                     { /* element here. */ }
                     { user.email
                         ? <UserInfo firstName={firstName} lastName={lastName} email={email} />

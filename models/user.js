@@ -23,6 +23,13 @@ const userSchema = new mongoose.Schema({
         required: "Phone number is required.",
         unique: true
     },
+    /*
+    * The first coupon amount they load (recharge) on sign up.
+    * */
+    couponCredit: {
+        type: Number,
+        required: true,
+    }
 });
 
 /*
@@ -37,7 +44,7 @@ userSchema.virtual('name').get(function() {
 * */
 userSchema.post('save', function(user) {
     Wallet.create({
-        credit: 100,
+        credit: user.couponCredit,
         user: user._id,
     })
 });

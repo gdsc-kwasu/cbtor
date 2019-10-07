@@ -3,17 +3,22 @@ const passport = require('passport');
 
 // Rip off user model from mongoose.
 const User = mongoose.model('User');
+const Coupon = mongoose.model('Coupon');
 
 /*
 * For now, assume no validation - create and store
 * a user to the database.
 * */
-exports.createUser = (req, res, next) => {
+exports.createUser = async (req, res, next) => {
+    const coupon = await Coupon.findOneAndUpdate({ pin: req.body.coupon },
+        { is_used: true });
+
     const user = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         phone: req.body.phone,
+        couponCredit: coupon.amount,
     });
 
     User.register(user, req.body.password, (err) => {

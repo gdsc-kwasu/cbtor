@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-const User = mongoose.model('User');
 const { check, validationResult } = require('express-validator');
+
+const User = mongoose.model('User');
+const Coupon =  mongoose.model('Coupon');
 
 /*
 * Validation rules that applies to users signing
@@ -33,6 +35,16 @@ const rules = [
     // Make sure password length is longer or is 5 chars.
     check('password').isLength({ min: 5})
         .withMessage('Password must be 5 characters or more'),
+
+    // Validate and check if user entered coupon is valid.
+    check('coupon').not().isEmpty().withMessage('Enter your coupon code.'),
+    check('coupon').custom((coupon, { req }) => {
+        return Coupon.findOne({ pin: coupon })
+            .then(coupon => {
+                if (coupon.is_used) return Promise.reject('Coupon has been used.');
+            })
+            .catch(() => Promise.reject('Invalid coupon code'))
+    })
 ];
 
 const validate = (req, res, next) => {

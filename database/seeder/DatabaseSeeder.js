@@ -8,6 +8,7 @@ mongoose.connect(process.env.DATABASE)
         * Plug in all defined database seeds here.
         * */
         require('./CourseSeeder');
+        require('./CouponSeeder');
 
     })
     .catch((err) => {

@@ -30,17 +30,25 @@ const NavBar = ({ user }) => {
     return (
         <React.Fragment>
             <nav className="navbar navbar-light">
-                <a className="navbar-brand" href="#">
-                    <span className='fa fa-bell alarm-icon'></span>
-                    <small className="badge badge-danger">7</small>
-                </a>
+                
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navBarDashboard" aria-controls="navBarDashboard" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span className="fa fa-bars" />
                 </button>
+                <a className="navbar-brand" href="#">
+                    <span className='fa fa-bell alarm-icon'></span>
+                    <small className="badge badge-danger">7</small>
+                </a>
 
                 <div className="collapse navbar-collapse px-0 py-0 mb-0" id="navBarDashboard">
+                    <div className='d-flex justify-content-end mb-0'>
+                        <button className="navbar-toggler text-white" type="button" data-toggle="collapse"
+                        data-target="#navBarDashboard" aria-controls="navBarDashboard" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                            <span className="fa fa-times" />
+                        </button>
+                    </div>
                     { /* element here. */ }
                     { user.email
                         ? <UserInfo firstName={firstName} lastName={lastName} email={email} />

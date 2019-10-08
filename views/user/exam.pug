@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  div.py-2.py-3.px-3.border.border-light
+    a(href='/dashboard' style="font-size: 1.5em;")
+      i.fas.fa-long-arrow-alt-left
+
+  .container.mt-3.mt-md-5
+    .row
+      .col-12.text-center
+        h4.text-uppercase.text-primary #{course.title}
+        h6 #{course.code}
+
+  .container#app
+
+block scripts
+  script(src="/build/js/exam.js")

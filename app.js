@@ -72,6 +72,10 @@ app.get('/dashboard',
 app.use('/api', require('./routes/api'));
 
 /*
+* Add examination resource routes */
+app.use('/exam', require('./routes/exam'));
+
+/*
 * Handles routes that are not found or an error
 * occurred on processing requests.
 * */

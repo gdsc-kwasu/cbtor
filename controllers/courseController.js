@@ -12,3 +12,15 @@ exports.getAllCourses = (req, res, next) => {
             res.json(courses);
         })
 };
+
+/*
+* Retrieve an individual course by its ID
+* */
+exports.getCourseById = (req, res, next) => {
+    Course.findById(req.params.id)
+        .lean()
+        .exec((err, course) => {
+            if (err) return next(err);
+            res.json(course);
+        })
+};

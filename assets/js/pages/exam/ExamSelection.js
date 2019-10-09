@@ -27,21 +27,29 @@ class ExamSelection extends React.Component {
         this.state = {
             course: null,
             value: 20,
+            isLoading: false,
         };
 
-        this.handleStandardExamEvent = this.handleStandardExamEvent.bind(this);
+        this.handleStandardExamClick = this.handleStandardExamClick.bind(this);
+        this.handleCustomExamClick = this.handleCustomExamClick.bind(this);
     }
 
-    handleStandardExamEvent()
-    {
+    handleStandardExamClick() {
         fetch(`/api/exam/${this.props.course._id}?type=standard`)
             .then(res => res.json())
             .then(data => this.props.setExam(data))
             .catch(error => console.log(error));
     }
 
+    handleCustomExamClick(amount = 20) {
+        fetch(`/api/exam/${this.props.course._id}?type=custom&amount=${amount}`)
+            .then(res => res.json())
+            .then(data => this.props.setExam(data))
+            .catch(error => console.log(error));
+    }
+
     render() {
-        const { course } = this.props;
+        const { course, isLoading } = this.props;
 
         return (
             <React.Fragment>
@@ -79,7 +87,7 @@ class ExamSelection extends React.Component {
                                 </div>
                             </div>
                             <button className="btn btn-primary btn-block btn-custom"
-                                    onClick={this.handleStandardExamEvent}>
+                                    onClick={this.handleStandardExamClick}>
                                 Start Exam
                             </button>
                         </div>
@@ -94,7 +102,8 @@ class ExamSelection extends React.Component {
                                 <InputRange minValue={10} maxValue={80} onChange={value => this.setState({ value })}
                                             value={this.state.value} />
                             </div>
-                            <button className="btn btn-primary btn-block btn-custom">
+                            <button className="btn btn-primary btn-block btn-custom"
+                                    onClick={() => this.handleCustomExamClick(this.state.value)}>
                                 Start Exam
                             </button>
                         </div>

@@ -1,4 +1,5 @@
 const Course = require('../../models/course');
+const createQuestion = require('./QuestionSeeder');
 
 const courses = [
     { code: 'GNS 101', title: 'Use of English'},
@@ -16,16 +17,16 @@ const courses = [
 ];
 
 courses.forEach(async ({code, title}) => {
-    await Course.create({
+    const course = await Course.create({
         code,
         title,
         standard: {
             question: 40,
             time: 35,
         }
-    }, function(err) {
-        if (err) throw err;
-    })
+    });
+
+    createQuestion(course.id, 200);
 });
 
 console.log('Completed running Course Seeder');

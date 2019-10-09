@@ -9,6 +9,7 @@ mongoose.connect(process.env.DATABASE)
         * */
         require('./CourseSeeder');
         require('./CouponSeeder');
+        //require('./QuestionSeeder');
 
     })
     .catch((err) => {

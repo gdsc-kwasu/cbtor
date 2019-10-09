@@ -44,7 +44,11 @@ const retrieveQFromDatabase = async (id, amount) => {
         "$match": {
             course: id,
         }
-    }]).sample(amount);
+    }])
+        .project({
+            question: 1, answer: 1, options: 1, _id: 1,
+        })
+        .sample(amount);
 };
 
 /*

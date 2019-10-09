@@ -1,0 +1,104 @@
+.q-section {
+  width: 80%;
+  margin: 10px auto 5px auto;
+  padding: 35px 50px;
+  border: 1px solid $light;
+  border-radius: 5px;
+}
+
+.q-section__question {
+  padding: 15px 0;
+  border-bottom: 1px solid $light;
+}
+.q-section__question-label {
+  padding: 8px 10px 12px 10px;
+  margin-right: 8px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid $gray-500;
+}
+
+.q-section__options {
+  padding: 10px 35px;
+  margin: 5px 0;
+}
+
+.q-section__option {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid transparent;
+  transition: border .5s linear;
+  border-radius: 5px;
+  display: inline-block;
+
+  &:hover {
+    border: 1px solid $gray-500;
+    transition: border .7s ease-in;
+    cursor: pointer;
+  }
+}
+.q-section__option-indicator {
+  border: 1px solid $gray-500;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 4px 0 0 0;
+  font-size: .7em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.q-section__option.active {
+  border: 1px solid $primary;
+  color: $primary;
+  transition: none !important;
+  &:hover {
+    border: 1px solid $primary;
+    transition: none !important;
+  }
+}
+.q-section__option.active .q-section__option-indicator {
+  border: 1px solid $primary;
+}
+
+.q-section__prevNext {
+  color: $primary;
+  font-size: 1.8em;
+  display: inline-block;
+  margin-right: 40px;
+}
+.q-section__offset {
+  display: inline-block;
+  margin: 4px;
+  border: 1px solid $gray-500;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: .85em;
+  transition: border .3s linear;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary;
+    border: 1px solid $primary;
+    transition: border .4s linear;
+  }
+}
+.q-section__offset--done {
+  border: 1px solid $primary;
+  background-color: $primary;
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+.q-section__offset--active {
+  border: 1px solid $primary !important;
+  background-color: transparent !important;
+  color: $primary !important;
+  font-weight: bold;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const TotalScore = ({ questions, answers }) => {
     const score = questions.reduce((prev, current, index) => {
-        return prev + current.answer === answers[index] ? 1 : 0;
+        return (current.answer === answers[index]) ? prev + 1 : prev;
     }, 0);
 
     return (
@@ -11,7 +11,7 @@ const TotalScore = ({ questions, answers }) => {
             <h5 className="text-primary font-weight-bold">
                 { score }/{ questions.length }
             </h5>
-            <p className="small mb-0">
+            <p className="small mb-1">
                 Check the summery of what you got right and wrong.
             </p>
             <a href="/dashboard" className="btn btn-primary">Return to Dashboard</a>

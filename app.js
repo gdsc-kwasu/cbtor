@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 // Add the authentication and authorization routes.
 app.use('/', require('./routes/auth'));
 
-app.get('/dashboard',
+app.get(['/dashboard', '/wallet', '/score', '/feedback', '/password'],
     (req, res, next) => {
         if (!req.user)
             return res.redirect('/login');
@@ -66,6 +66,8 @@ app.get('/dashboard',
             title: 'Dashboard &mdash; CBTor'
         });
 });
+
+app.use('/', require('./routes/user'));
 /*
 * Add routes for all API requests.
 * */

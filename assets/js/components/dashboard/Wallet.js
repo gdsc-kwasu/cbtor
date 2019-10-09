@@ -45,7 +45,7 @@ class Wallet extends React.Component {
                                                 <input type="text"
                                                        className="form-control"
                                                        placeholder="xxxx-xxxx-xxxx"
-                                                       name="coupon"
+                                                       name="pin"
                                                        required={true}/>
                                             </div>
                                         </div>

@@ -1,14 +1,15 @@
 import React from 'react';
+import ExamResult from './ExamResult';
 import Countdown from 'react-countdown-now';
 import PulseLoader from '../../components/PulseLoader';
 
-const Timer = ({}) => {
+const Timer = ({ terminateExam }) => {
     return (
         <div className="d-flex justify-content-between py-2 py-3 px-3 border border-light">
-            <button className="btn btn-outline-danger btn-terminate">
+            <button className="btn btn-outline-danger btn-terminate" onClick={terminateExam}>
                 Terminate Exam
             </button>
-            <Countdown date={Date.now() + 6 * 60 * 1000} renderer={TimerRenderer} />
+            <Countdown date={Date.now() + 6 * 60 * 1000} renderer={TimerRenderer} onComplete={terminateExam} />
         </div>
     );
 };
@@ -76,10 +77,12 @@ class ExamGround extends React.Component {
             answers: null,
             duration: null,
             questions: null,
+            isDone: false,
         };
 
-        this.handleOptionClick = this.handleOptionClick.bind(this);
         this.handleOffset = this.handleOffset.bind(this);
+        this.handleOptionClick = this.handleOptionClick.bind(this);
+        this.handleExamTerminate = this.handleExamTerminate.bind(this);
     }
 
     componentDidMount() {
@@ -107,15 +110,22 @@ class ExamGround extends React.Component {
         this.setState({ active: offset });
     }
 
+    handleExamTerminate() {
+        this.setState({ isDone: true })
+    }
+
     render() {
-        const { questions } = this.state;
+        const { questions, isDone } = this.state;
         if (!questions) return <PulseLoader />;
 
         const question = this.state.questions[this.state.active];
         const answer = this.state.answers[this.state.active];
+
+        if (true) return <ExamResult answers={this.state.answers} questions={questions} />;
+
         return (
             <React.Fragment>
-                <Timer />
+                <Timer terminateExam={this.handleExamTerminate}/>
                 <div className="q-section">
                     <div className="q-section__question">
                         <span className="q-section__question-label">

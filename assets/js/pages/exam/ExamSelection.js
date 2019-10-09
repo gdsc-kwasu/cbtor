@@ -19,7 +19,7 @@ const Loader = () => {
     );
 };
 
-class Exam extends React.Component {
+class ExamSelection extends React.Component {
     constructor(props) {
         super(props);
 
@@ -28,62 +28,80 @@ class Exam extends React.Component {
             value: 20,
         };
 
+        this.handleStandardExamEvent = this.handleStandardExamEvent.bind(this);
     }
 
-    componentDidMount() {
-        const courseId = this.props.match.params.id;
-        fetch(`/api/courses/${courseId}`)
+    handleStandardExamEvent()
+    {
+        fetch(`/api/exam/${this.props.course._id}?type=standard`)
             .then(res => res.json())
-            .then(course => this.setState({ course }))
-            .catch(() => { /* pass and do nothing */ })
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
     }
 
     render() {
-        const { course } = this.state;
-        if (!course) return <Loader />;
+        const { course } = this.props;
 
         return (
-            <div className="container mt-4">
-                <div className="row justify-content-center">
-                    <div className="col-11 col-md-4 exam-select">
-                        <h6 className="exam-select__title">Recommended</h6>
-                        <small>
-                            The standard type of exam you will meet in real-life.
-                            This will simulate the actual exam experience for you.
-                        </small>
-                        <div className="my-4 py-2 d-flex justify-content-between">
-                            <div className="exam-select__info">
-                                <i className="fas fa-stopwatch"/>
-                                {course.standard.time} mins
-                            </div>
-                            <div className="exam-select__info">
-                                <i className="fas fa-database"/>
-                                {course.standard.question} questions
-                            </div>
+            <React.Fragment>
+                <div className="py-2 py-3 px-3 border border-light">
+                    <a href="/dashboard" style={{ fontSize: '1.5em' }}>
+                        <i className="fas fa-long-arrow-alt-left"/>
+                    </a>
+                </div>
+                <div className="container mt-3 mt-md-5">
+                    <div className="row">
+                        <div className="col-12 text-center">
+                            <h4 className="text-uppercase text-primary">
+                                { course.title }
+                            </h4>
+                            <h6>{ course.code }</h6>
                         </div>
-                        <button className="btn btn-primary btn-block btn-custom">
-                            Start Exam
-                        </button>
-                    </div>
-                    <div className="col-12 col-md-1 d-none d-md-block" />
-                    <div className="col-11 col-md-4 exam-select">
-                        <h6 className="exam-select__title">Customize</h6>
-                        <small>
-                            Describe how the exam should be &mdash; be in charge.
-                            The amount of question will determine the duration.
-                        </small>
-                        <div className="my-3 pt-4 pb-3">
-                            <InputRange minValue={10} maxValue={80} onChange={value => this.setState({ value })}
-                                        value={this.state.value} />
-                        </div>
-                        <button className="btn btn-primary btn-block btn-custom">
-                            Start Exam
-                        </button>
                     </div>
                 </div>
-            </div>
+                <div className="container mt-4">
+                    <div className="row justify-content-center">
+                        <div className="col-11 col-md-4 exam-select">
+                            <h6 className="exam-select__title">Recommended</h6>
+                            <small>
+                                The standard type of exam you will meet in real-life.
+                                This will simulate the actual exam experience for you.
+                            </small>
+                            <div className="my-4 py-2 d-flex justify-content-between">
+                                <div className="exam-select__info">
+                                    <i className="fas fa-stopwatch"/>
+                                    {course.standard.time} mins
+                                </div>
+                                <div className="exam-select__info">
+                                    <i className="fas fa-database"/>
+                                    {course.standard.question} questions
+                                </div>
+                            </div>
+                            <button className="btn btn-primary btn-block btn-custom"
+                                    onClick={this.handleStandardExamEvent}>
+                                Start Exam
+                            </button>
+                        </div>
+                        <div className="col-12 col-md-1 d-none d-md-block" />
+                        <div className="col-11 col-md-4 exam-select">
+                            <h6 className="exam-select__title">Customize</h6>
+                            <small>
+                                Describe how the exam should be &mdash; be in charge.
+                                The amount of question will determine the duration.
+                            </small>
+                            <div className="my-3 pt-4 pb-3">
+                                <InputRange minValue={10} maxValue={80} onChange={value => this.setState({ value })}
+                                            value={this.state.value} />
+                            </div>
+                            <button className="btn btn-primary btn-block btn-custom">
+                                Start Exam
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment>
         );
     }
 }
 
-export default Exam;
+export default ExamSelection;

@@ -6,24 +6,41 @@
   border-radius: 5px;
 }
 
+@include media-breakpoint-down('sm') {
+  .q-section {
+    width: 100%;
+    padding: 25px 15px;
+  }
+}
 .q-section__question {
   padding: 15px 0;
   border-bottom: 1px solid $light;
 }
 .q-section__question-label {
-  padding: 8px 10px 12px 10px;
+  padding: 6px 10px 14px 10px;
   margin-right: 8px;
-  height: 40px;
-  width: 40px;
+  height: em(35);
+  width: em(35);
   text-align: center;
   display: inline-block;
   border-radius: 50%;
   border: 1px solid $gray-500;
 }
+@include media-breakpoint-down('sm') {
+  .q-section__question-label {
+    padding: 4px 10px 16px 10px;
+  }
+}
 
 .q-section__options {
   padding: 10px 35px;
   margin: 5px 0;
+}
+
+@include media-breakpoint-down('sm') {
+  .q-section__options {
+    padding: 10px 10px;
+  }
 }
 
 .q-section__option {

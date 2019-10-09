@@ -32,24 +32,41 @@ class ExamSelection extends React.Component {
 
         this.handleStandardExamClick = this.handleStandardExamClick.bind(this);
         this.handleCustomExamClick = this.handleCustomExamClick.bind(this);
+        this.toggleLoader = this.toggleLoader.bind(this);
     }
 
     handleStandardExamClick() {
+        this.toggleLoader();
+
         fetch(`/api/exam/${this.props.course._id}?type=standard`)
             .then(res => res.json())
-            .then(data => this.props.setExam(data))
-            .catch(error => console.log(error));
+            .then(data => {
+                this.toggleLoader();
+                this.props.setExam(data);
+            })
+            .catch(() => this.toggleLoader());
     }
 
     handleCustomExamClick(amount = 20) {
+        this.toggleLoader();
+
         fetch(`/api/exam/${this.props.course._id}?type=custom&amount=${amount}`)
             .then(res => res.json())
-            .then(data => this.props.setExam(data))
-            .catch(error => console.log(error));
+            .then(data => {
+                this.toggleLoader();
+                this.props.setExam(data);
+            })
+            .catch(() => this.toggleLoader());
+    }
+
+    toggleLoader() {
+        this.setState((state) => ({ isLoading: !state.isLoading }));
     }
 
     render() {
-        const { course, isLoading } = this.props;
+        const { course } = this.props;
+
+        if (this.state.isLoading) return <Loader />;
 
         return (
             <React.Fragment>

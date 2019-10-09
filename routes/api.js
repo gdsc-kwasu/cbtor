@@ -36,6 +36,6 @@ router.get('/wallet', wait(), getWalletBalance);
 /*
 * Examination (and exam taking) routes.
 * */
-router.get('/exam/:id', getQuestion);
+router.get('/exam/:id', wait(3000), getQuestion);
 
 module.exports = router;

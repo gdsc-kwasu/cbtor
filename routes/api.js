@@ -4,6 +4,8 @@ const { userInfo } = require('../controllers/userController');
 const { getAllCourses,
     getCourseById } = require('../controllers/courseController');
 
+const { getQuestion } = require('../controllers/examController');
+
 const { getWalletBalance } = require('../controllers/walletController');
 
 const wait = (timeout = 2000) => {
@@ -30,5 +32,10 @@ router.get('/courses', wait(), getAllCourses);
 router.get('/courses/:id', wait(), getCourseById);
 
 router.get('/wallet', wait(), getWalletBalance);
+
+/*
+* Examination (and exam taking) routes.
+* */
+router.get('/exam/:id', getQuestion);
 
 module.exports = router;

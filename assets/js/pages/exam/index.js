@@ -47,11 +47,13 @@ class Exam extends React.Component {
     }
 
     render() {
-        const { course, isLoading } = this.state;
+        const { course, exam, isLoading } = this.state;
         if (isLoading || !course) return <Loader />;
 
+        if (exam) return <ExamGround exam={exam}/>;
+
         return (
-            <ExamGround course={this.state.course} />
+            <ExamSelection setExam={this.setExam} course={course} />
         );
     }
 }

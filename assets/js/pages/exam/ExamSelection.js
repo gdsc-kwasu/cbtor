@@ -1,5 +1,6 @@
 import React from 'react';
 import PulseLoader from '../../components/PulseLoader';
+import PropTypes from 'prop-types';
 import InputRange from 'react-input-range';
 import "react-input-range/lib/css/index.css";
 
@@ -35,7 +36,7 @@ class ExamSelection extends React.Component {
     {
         fetch(`/api/exam/${this.props.course._id}?type=standard`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => this.props.setExam(data))
             .catch(error => console.log(error));
     }
 
@@ -103,5 +104,9 @@ class ExamSelection extends React.Component {
         );
     }
 }
+
+ExamSelection.propTypes = {
+    course: PropTypes.object.isRequired,
+};
 
 export default ExamSelection;

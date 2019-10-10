@@ -11,6 +11,9 @@ exports.getWalletBalance = (req, res, next) => {
         .catch(error => next(error));
 };
 
+/*
+* Loads a valid Coupon to the user's Wallet.
+* */
 exports.loadCreditToWallet = async (req, res, next) => {
     const coupon = await Coupon.findOne({ pin: req.body.pin });
     if (!coupon || coupon.is_used) {

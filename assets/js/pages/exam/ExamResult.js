@@ -1,4 +1,5 @@
 import React from 'react';
+import { InlineTex } from "react-tex";
 
 const TotalScore = ({ questions, answers }) => {
     const score = questions.reduce((prev, current, index) => {
@@ -30,7 +31,7 @@ const Option = ({ text, answer, index, selected }) => {
                     <span className={`a-section__option-indicator `}>
                         { label }
                     </span>
-                    { text }
+                    <InlineTex texContent={ text } />
             </div>
         </div>
     );

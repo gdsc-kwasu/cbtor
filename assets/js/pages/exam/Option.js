@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { InlineTex } from "react-tex";
 
 const Option = ({ text, index, answer, onClick }) => {
     const label = ['A', 'B', 'C', 'D', 'E'][index];
@@ -11,7 +12,7 @@ const Option = ({ text, index, answer, onClick }) => {
                 <span className={`q-section__option-indicator `}>
                     { label }
                 </span>
-                { text }
+                <InlineTex texContent={text}/>
             </div>
         </div>
     );

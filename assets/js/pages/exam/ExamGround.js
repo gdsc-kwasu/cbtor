@@ -4,6 +4,7 @@ import Option from './Option';
 import PrevNext from './PrevNext';
 import Pagination from './Pagination';
 import ExamResult from './ExamResult';
+import { InlineTex } from "react-tex";
 import PulseLoader from '../../components/PulseLoader';
 
 class ExamGround extends React.Component {
@@ -79,7 +80,7 @@ class ExamGround extends React.Component {
                         <span className="q-section__question-label">
                             { this.state.active + 1 }
                         </span>
-                        { question.question }
+                        <InlineTex texContent={question.question} />
                     </div>
 
                     <div className="q-section__options">

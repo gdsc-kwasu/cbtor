@@ -9,7 +9,10 @@ const { getQuestion } = require('../controllers/examController');
 const { getWalletBalance } = require('../controllers/walletController');
 
 const wait = (timeout = 2000) => {
-  return  (req, res, next) => {
+    if (process.env.NODE_ENV === 'production')
+        return (req, res, next) => next();
+
+    return  (req, res, next) => {
         setTimeout(() => next(), timeout)
     };
 };

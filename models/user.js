@@ -29,6 +29,11 @@ const userSchema = new mongoose.Schema({
     couponCredit: {
         type: Number,
         required: true,
+    },
+    allow: {
+        type: Boolean,
+        required: true,
+        default: false,
     }
 });
 

@@ -9,7 +9,7 @@ const UserInfo = ({ firstName, lastName, email }) => {
     return (
         <div className="pt-4">
             <div className='d-flex justify-content-center'>
-                <img src="/images/mario.svg" alt="User name is here" className="user-avatar"/>
+                <img src="/images/user.png" alt={ firstName } className="user-avatar"/>
             </div>
             <div className="text-center user--details pt-2">
                 <h5 className="font-weight-bold mb-0">

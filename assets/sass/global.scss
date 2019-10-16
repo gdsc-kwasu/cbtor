@@ -136,3 +136,26 @@
 .input-range__track--active {
     background: $blue !important;
 }
+
+/*
+* React Element
+*/
+.react__textarearow {
+    border: 1px solid $gray-500;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.select--custom {
+    border: 1px solid $gray-500;
+    border-radius: 5px;
+    padding: 5px 90px 5px 10px;
+    background-color: transparent;
+    display: inline-block;
+    margin: 0 8px;
+
+    &:active, &:focus {
+        outline: none;
+    }
+}

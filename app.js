@@ -78,6 +78,11 @@ app.use('/api', require('./routes/api'));
 app.use('/exam', require('./routes/exam'));
 
 /*
+* Administrator route
+* */
+app.use('/manage', require('./routes/admin'));
+
+/*
 * Handles routes that are not found or an error
 * occurred on processing requests.
 * */

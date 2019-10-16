@@ -11,6 +11,7 @@ mix.react('assets/js/pages/register.jsx', 'public/build/js/app.js')
     .react('assets/js/pages/login.jsx', 'public/build/js/login.js')
     .react('assets/js/pages/dashboard.js', 'public/build/js/dashboard.js')
     .react('assets/js/pages/exam/index.js', 'public/build/js/exam.js')
+    .react('assets/js/pages/admin/app.js', 'public/build/js/admin.js')
     /*
      * Same format as the react file, but instead, for compiling
      * scss/sass files. obviously to the public css folder.

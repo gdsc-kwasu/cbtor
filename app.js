@@ -81,6 +81,8 @@ app.use('/exam', require('./routes/exam'));
 * Administrator route
 * */
 app.use('/manage', require('./routes/admin'));
+// Administrator API route.
+app.use('/api/manage', require('./routes/admin-api'));
 
 /*
 * Handles routes that are not found or an error
@@ -91,6 +93,12 @@ app.use((req, res) => {
         .render('error404', {
             title: 'Page Not Found',
         });
+});
+
+app.use((req, res, next, err) => {
+    res.json({
+        error: err
+    })
 });
 
 module.exports = app;

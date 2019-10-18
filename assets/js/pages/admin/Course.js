@@ -1,4 +1,5 @@
 import React from 'react';
+import notify from './notify';
 import LatexRenderer from './LatexRenderer';
 import PulseLoader from '../../components/PulseLoader';
 
@@ -10,7 +11,11 @@ const TextAreaRow = ({ label, value, onChange }) => {
                     {label}
                 </label>
                 <LatexRenderer text={value} />
-                <textarea className="form-control form-small" onChange={({ target }) => onChange(target.value)} />
+                <textarea
+                    className="form-control form-small"
+                    value={value}
+                    onChange={({ target }) => onChange(target.value)}
+                />
             </div>
         </div>
     );
@@ -24,13 +29,14 @@ class Course extends React.Component {
             question: '',
             answer: 'A',
             options: [],
-            course: null,
+            course: '',
         };
 
         this.handleOptionChange = this.handleOptionChange.bind(this);
         this.handleOnChange = this.handleOnChange.bind(this);
         this.onKeyPress = this.onKeyPress.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.resetState = this.resetState.bind(this);
     }
 
     componentDidMount() {
@@ -53,8 +59,33 @@ class Course extends React.Component {
     }
 
     onSubmit(e) {
-        e && e.preventDefault();
-        console.log(this.state);
+        e && e.preventDefault(); // need this hack to prevent error if triggered by KeyPress event.
+
+        fetch('/api/manage/question', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state),
+        })
+            .then((res) => {
+                if (res.status !== 200)
+                    return notify('Failed', 'Something unexpected occurred', 'error');
+
+                this.resetState();
+                notify('Success', 'Question uploaded successfully.');
+            })
+            .catch(error => {
+                notify('Failed', 'Something unexpected occurred', 'danger');
+            });
+    }
+
+    resetState() {
+        this.setState({
+            question: '',
+            answer: 'A',
+            options: [],
+        })
     }
 
     onKeyPress(e) {
@@ -63,14 +94,16 @@ class Course extends React.Component {
     }
 
     render() {
-        const { question, courses, options } = this.state;
+        const { question, courses, answer, options } = this.state;
         if (!courses) return <PulseLoader />;
 
-        const CourseSelect = () => {
+        const CourseSelect = ({ active }) => {
             return (
                 <select
                     className="select--custom"
+                    value={active}
                     onChange={({ target }) => this.handleOnChange('course', target.value)}>
+                    <option value="">Pick Course</option>
                     {
                         courses.map(c => (<option value={c._id} key={c._id}>{c.code}</option>))
                     }
@@ -84,7 +117,7 @@ class Course extends React.Component {
                     <div className="col-12 col-sm-10 col-md-8">
                         <h6 className="text-uppercase">Upload University Course</h6>
                         <p>
-                            Fluctuis sunt mineraliss de neuter fermium. Est fortis triticum, cesaris.
+                            Throw some questions in the database, shall we?
                         </p>
                     </div>
                 </div>
@@ -96,9 +129,10 @@ class Course extends React.Component {
                                     <button className="btn btn-primary btn-sm" type="submit">
                                         Upload Question
                                     </button>
-                                    <CourseSelect />
+                                    <CourseSelect active={this.state.course} />
                                     <select
                                         className="select--custom"
+                                        value={answer}
                                         onChange={({ target }) => this.handleOnChange('answer', target.value)}>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
@@ -114,22 +148,22 @@ class Course extends React.Component {
                             />
                             <TextAreaRow
                                 label="Option A"
-                                value={options[0]}
+                                value={options[0] || ''}
                                 onChange={value => this.handleOptionChange(0, value)}
                             />
                             <TextAreaRow
                                 label="Option B"
-                                value={options[1]}
+                                value={options[1] || ''}
                                 onChange={value => this.handleOptionChange(1, value)}
                             />
                             <TextAreaRow
                                 label="Option C"
-                                value={options[2]}
+                                value={options[2] || ''}
                                 onChange={value => this.handleOptionChange(2, value)}
                             />
                             <TextAreaRow
                                 label="Option D"
-                                value={options[3]}
+                                value={options[3] || ''}
                                 onChange={value => this.handleOptionChange(3, value)}
                             />
                         </form>

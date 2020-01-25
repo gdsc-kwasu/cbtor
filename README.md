@@ -46,26 +46,26 @@ npm start
 
 # General bugs.
 - [x] countdown timer reloading.
-- [] Exam statistics is static.
-- [] Credit should be removed on taking exams.
-- [] Error message on login if user doesn't exists.
-- [] Creation of submit button on last question page.
-- [] Feedback submission is inactive.
-- [] Scores section should be utilized.
-- [] Change password not functional.
-- [] Email notification. (registration, empty wallet, change password)
-- [] Image upload from user.
-- [] User inforamtion.
-- [] Enforce SSL.
-- [] Forgot password.
+- [ ] Exam statistics is static.
+- [ ] Credit should be removed on taking exams.
+- [ ] Error message on login if user doesn't exists.
+- [ ] Creation of submit button on last question page.
+- [ ] Feedback submission is inactive.
+- [ ] Scores section should be utilized.
+- [ ] Change password not functional.
+- [ ] Email notification. (registration, empty wallet, change password)
+- [ ] Image upload from user.
+- [ ] User inforamtion.
+- [ ] Enforce SSL.
+- [ ] Forgot password.
 
 # Bugs in desktop mode.
-- [] No notification button.
+- [ ] No notification button.
 
 # Bugs in mobile veiw.
-- [] No edit profile.
-- [] No contact support.
+- [ ] No edit profile.
+- [ ] No contact support.
 
 # Features on admin dashboard.
-- [] Upload questions and courses.
-- [] Print coupons.
+- [ ] Upload questions and courses.
+- [ ] Print coupons.

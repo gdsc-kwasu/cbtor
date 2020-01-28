@@ -7,7 +7,7 @@ import PulseLoader from '../components/PulseLoader';
 const UserInfo = ({ firstName, lastName, email }) => {
     return (
         <div className="d-flex">
-            <img src="/images/user.png" alt={firstName} className="user-avatar"/>
+            <img src="/images/adedeji.png" alt={firstName} className="user-avatar"/>
             <div className="pt-3 pl-3">
                 <h5 className="font-weight-bold mb-0">
                     { `${firstName} ${lastName}` }

@@ -27,6 +27,8 @@ block content
                 .form-group.col-12
                   label(for="email")
                   input(type="text" name="email" class="form-control" id="email" placeholder="Enter your email")
+                  if flashes.error
+                    span.form-text.small.text-danger.mb-0 #{flashes.error[0]}
               .form-row
                 .form-group.col-12
                   label(for="password")

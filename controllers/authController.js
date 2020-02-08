@@ -36,6 +36,7 @@ exports.createUser = async (req, res, next) => {
 exports.logUserIn = passport.authenticate('local',{
     successRedirect: '/dashboard',
     failureRedirect: '/login',
+    failureFlash: 'Your email or password was incorrect.',
 });
 
 /*

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Course = mongoose.model('Course');
 const Question = mongoose.model('Question');
+const Wallet = mongoose.model('Wallet');
 
 /*
 * Get a course by its ID, and render the Exam Portal
@@ -23,6 +24,16 @@ exports.getQuestion = async (req, res, next) => {
     const { type, amount = 20 } = req.query;
     const course = await Course.findById(req.params.id);
     if (!course) return next(new Error('Course not found'));
+
+    // Deduct user's credit or send error if not enought for exam.
+    Wallet.findOne({ user: req.user._id})
+        .then(wallet => {
+            if (wallet.credit < 10) return res.status(404)
+                .json({ message: 'Not enough credit.'})
+            
+            wallet.credit = wallet.credit - 10
+            wallet.save()
+        })
 
     return type === 'standard'
         ? res.json(

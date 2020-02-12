@@ -46,7 +46,7 @@ class ExamGround extends React.Component {
         return (
             <React.Fragment>
                 <Timer terminateExam={this.handleExamTerminate} duration={duration} />
-                <Questions answers={answers} questions={questions} />
+                <Questions answers={answers} questions={questions} terminateExam={this.handleExamTerminate} />
             </React.Fragment>
         );
     }

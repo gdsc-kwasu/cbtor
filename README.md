@@ -49,7 +49,7 @@ npm start
 - [ ] Exam statistics is static.
 - [x] Credit should be removed on taking exams.
 - [x] Error message on login if user doesn't exists.
-- [ ] Creation of submit button on last question page.
+- [x] Creation of submit button on last question page.
 - [ ] Feedback submission is inactive.
 - [ ] Scores section should be utilized.
 - [ ] Change password not functional.

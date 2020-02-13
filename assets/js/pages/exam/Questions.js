@@ -83,7 +83,8 @@ class Questions extends React.Component {
                     <div>
                         <PrevNext active={this.state.active}
                                   length={questions.length}
-                                  offset={this.handleOffset} />
+                                  offset={this.handleOffset}
+                                  terminateExam={this.props.terminateExam} />
 
                         <Pagination answers={this.state.answers}
                                     active={this.state.active}

@@ -16,6 +16,7 @@ class ExamGround extends React.Component {
         };
 
         this.handleExamTerminate = this.handleExamTerminate.bind(this);
+        this.handleOptionClick = this.handleOptionClick.bind(this)
     }
 
     componentDidMount() {
@@ -35,6 +36,19 @@ class ExamGround extends React.Component {
         this.setState({ isDone: true })
     }
 
+    /*
+    * Update the user picked answer in the state tree.
+    * */
+   handleOptionClick(value, active) {
+        const { answers } = this.state;
+
+        this.setState({ answers: [
+                ...answers.slice(0, active),
+                value,
+                ...answers.slice(active + 1)
+            ]});
+    }
+
     render() {
         const { answers, questions, isDone, duration } = this.state
 
@@ -46,7 +60,11 @@ class ExamGround extends React.Component {
         return (
             <React.Fragment>
                 <Timer terminateExam={this.handleExamTerminate} duration={duration} />
-                <Questions answers={answers} questions={questions} terminateExam={this.handleExamTerminate} />
+                <Questions 
+                    answers={answers} 
+                    questions={questions}
+                    onAnswerClick={this.handleOptionClick} 
+                    terminateExam={this.handleExamTerminate} />
             </React.Fragment>
         );
     }

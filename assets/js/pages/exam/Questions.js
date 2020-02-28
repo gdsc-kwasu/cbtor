@@ -9,7 +9,6 @@ class Questions extends React.Component {
         super(props)
 
         this.state = {
-            answers: null,
             questions: null,
             active: 0,
         }
@@ -19,9 +18,9 @@ class Questions extends React.Component {
     }
 
     componentDidMount() {
-        const { answers, questions } = this.props
+        const { questions } = this.props
+        
         this.setState({
-            answers,
             questions
         })
     }
@@ -30,13 +29,8 @@ class Questions extends React.Component {
     * Update the user picked answer in the state tree.
     * */
    handleOptionClick(value) {
-        const { answers, active } = this.state;
-
-        this.setState({ answers: [
-                ...answers.slice(0, active),
-                value,
-                ...answers.slice(active + 1)
-            ]});
+       const { active } = this.state
+       this.props.onAnswerClick(value, active)
     }
 
     /*
@@ -51,10 +45,11 @@ class Questions extends React.Component {
     * */
 
     render() {
-        const { questions, isDone, active, answers, duration } = this.state;
+        const { questions, active } = this.state;
+        const { answers } = this.props
 
         // Do not show up if props are not available yet.
-        if (!answers) return null
+        if (!questions) return null
 
         const question = questions[active];
         const answer = answers[active];
@@ -81,13 +76,13 @@ class Questions extends React.Component {
                         }
                     </div>
                     <div>
-                        <PrevNext active={this.state.active}
+                        <PrevNext active={active}
                                   length={questions.length}
                                   offset={this.handleOffset}
                                   terminateExam={this.props.terminateExam} />
 
-                        <Pagination answers={this.state.answers}
-                                    active={this.state.active}
+                        <Pagination answers={answers}
+                                    active={active}
                                     offset={this.handleOffset} />
                     </div>
                 </div>

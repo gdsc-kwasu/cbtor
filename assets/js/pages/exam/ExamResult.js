@@ -58,6 +58,7 @@ const Question = ({ index, question, answer }) => {
 };
 
 const ExamResult = ({ questions, answers }) => {
+    
     return (
         <React.Fragment>
             <TotalScore questions={questions} answers={answers} />

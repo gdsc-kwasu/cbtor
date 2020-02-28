@@ -52,6 +52,7 @@ app.get('/', (req, res) => {
     res.redirect('/login');
 });
 
+
 // Add the authentication and authorization routes.
 app.use('/', require('./routes/auth'));
 

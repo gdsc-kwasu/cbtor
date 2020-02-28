@@ -1,0 +1,26 @@
+/**
+ * Synchronize User's score to the API endpoint.
+ * 
+ * @param {string} url 
+ * @param {object} data 
+ */
+export const syncResult = (url, data) => {
+    return postRequest(url, data)
+        .then(res => res.json())
+}
+
+/**
+ * Helper function to setup Fetch for POST request.
+ * 
+ * @param {string} url API endpoint URL
+ * @param {*} data data to sent
+ */
+function postRequest(url, data) {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    })
+}

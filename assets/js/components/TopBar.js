@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import LinkButton from "./LinkButton";
 import PulseLoader from '../components/PulseLoader';
 
-const UserInfo = ({ firstName, lastName, email }) => {
+const UserInfo = ({ firstName, lastName, email, examTaken }) => {
     return (
         <div className="d-flex">
             <img src="/images/adedeji.png" alt={firstName} className="user-avatar"/>
@@ -12,20 +12,20 @@ const UserInfo = ({ firstName, lastName, email }) => {
                 <h5 className="font-weight-bold mb-0">
                     { `${firstName} ${lastName}` }
                 </h5>
-                <small>{ email } 50 Exams taken</small>
+                <small>{ email } {examTaken} Exams taken</small>
             </div>
         </div>
     );
 };
 
 const TopBar = ({ user }) => {
-    const { firstName, lastName, email } = user;
+    const { firstName, lastName, email, examTaken } = user;
     return (
         <div className="topbar">
             <div className="row align-items-center">
                 <div className="col-6">
                     { user.email
-                        ? <UserInfo email={email} firstName={firstName} lastName={lastName}/>
+                        ? <UserInfo email={email} firstName={firstName} lastName={lastName} examTaken={examTaken} />
                         : <PulseLoader />
                     }
                 </div>

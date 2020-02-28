@@ -5,7 +5,7 @@ import PulseLoader from '../components/PulseLoader';
 /*
 * Shows the user information on a small screen sidebar.
 * */
-const UserInfo = ({ firstName, lastName, email }) => {
+const UserInfo = ({ firstName, lastName, email, examTaken }) => {
     return (
         <div className="pt-4">
             <div className='d-flex justify-content-center'>
@@ -15,7 +15,7 @@ const UserInfo = ({ firstName, lastName, email }) => {
                 <h5 className="font-weight-bold mb-0">
                     { `${firstName} ${lastName}` }
                 </h5>
-                <small>{ email } <br/> 50 Exams taken</small>
+                <small>{ email } <br/> { examTaken } Exams taken</small>
             </div>
         </div>
     );
@@ -26,7 +26,7 @@ const UserInfo = ({ firstName, lastName, email }) => {
 * screens.
 * */
 const NavBar = ({ user }) => {
-    const { email, firstName, lastName } = user;
+    const { email, firstName, lastName, examTaken } = user;
     return (
         <React.Fragment>
             <nav className="navbar navbar-light">
@@ -51,7 +51,7 @@ const NavBar = ({ user }) => {
                     </div>
                     { /* element here. */ }
                     { user.email
-                        ? <UserInfo firstName={firstName} lastName={lastName} email={email} />
+                        ? <UserInfo firstName={firstName} lastName={lastName} email={email} examTaken={examTaken} />
                         : <PulseLoader color="#fff" />
                     }
                     <div className="sidebar__padded">

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const Score = mongoose.model('Score');
 const Course = mongoose.model('Course');
-const Question = mongoose.model('Question');
 const Wallet = mongoose.model('Wallet');
+const Question = mongoose.model('Question');
 
 /*
 * Get a course by its ID, and render the Exam Portal
@@ -14,6 +15,16 @@ exports.getExamById = async (req, res, next) => {
         course,
     });
 };
+
+/**
+ * Synchronize User's score to the database.
+ */
+exports.syncResult = (req, res, next) => {
+    Score.create(Object.assign(req.body, { user: req.user._id }))
+        .then(score => {
+            res.json(score)
+        })
+}
 
 /*
 * Retrieve question from the database and send to the caller.

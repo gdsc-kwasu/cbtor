@@ -11,7 +11,28 @@
         outline: none;
     }
 }
-
+.profile {
+    // margin-top: 15%;
+    width: 48%;
+    margin-right: -10%;
+}
+.profile-right {
+    // margin-top: 15%;
+    width: 48%;
+}
+.profile-group {
+    width: 50%;
+    margin-left: 25%;
+}
+.col-6 {
+    margin-top: 3%;
+}
+.left {
+    margin-left: 1.4%;
+}
+.right {
+    margin-left: 50%;
+}
 .field-icon {
     float: right;
     left: em(-20);
@@ -21,4 +42,21 @@
 
 .form-small {
     font-size: .8rem !important;
+}
+
+@media screen and (max-width: 576px) {
+    .profile {
+        margin-top: 15%;
+        width: 93%;
+        margin-left: 1.4%;
+    }
+    .profile-right {
+        margin-top: 15%;
+        width: 93%;
+        margin-left: .2%;
+    }
+    .profile-group {
+        width: 100%;
+        margin-left: -1%;
+    }
 }

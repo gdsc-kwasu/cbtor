@@ -20,10 +20,19 @@
     }
 }
 
-
-
+.profile-btn {
+    width: 50%;
+    margin-left: 25%;
+}
 .btn--small {
     text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-terminate {
+    text-transform: uppercase;
+    font-size: .75em;
+    padding: 10px 20px;
     font-weight: bold;
 }
 
@@ -32,11 +41,9 @@
     .btn--small {
         font-size: em(12);
     }
-}
+    .profile-btn {
+        width: 100%;
+        margin-left: -1%;
+    }
 
-.btn-terminate {
-    text-transform: uppercase;
-    font-size: .75em;
-    padding: 10px 20px;
-    font-weight: bold;
 }

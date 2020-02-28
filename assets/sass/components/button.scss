@@ -20,10 +20,6 @@
     }
 }
 
-.profile-btn {
-    width: 50%;
-    margin-left: 25%;
-}
 .btn--small {
     text-transform: uppercase;
     font-weight: bold;
@@ -41,9 +37,4 @@
     .btn--small {
         font-size: em(12);
     }
-    .profile-btn {
-        width: 100%;
-        margin-left: -1%;
-    }
-
 }

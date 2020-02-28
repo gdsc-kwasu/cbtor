@@ -27,6 +27,11 @@ const SideBarNav = () => {
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to="/profile" activeClassName="active">
+                            My Profile
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/password" activeClassName="active">
                             Change Password
                         </NavLink>

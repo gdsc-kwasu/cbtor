@@ -2,6 +2,7 @@ import './LinkButton';
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkButton from "./LinkButton";
+import { Link } from 'react-router-dom'
 import PulseLoader from '../components/PulseLoader';
 
 const UserInfo = ({ firstName, lastName, email, examTaken }) => {
@@ -30,9 +31,6 @@ const TopBar = ({ user }) => {
                     }
                 </div>
                 <div className="col-6">
-                    <LinkButton href="Profile" margin="mx-2">
-                        Edit Profile
-                    </LinkButton>
                     <LinkButton href="#" margin="mx-2" type="btn-outline-success">
                         Contact Support
                     </LinkButton>

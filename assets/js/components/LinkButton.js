@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 const LinkButton = (props) => {
     const { href, children, type, margin } = props;
     return (
-        <Link to={href}
+        <a href={href}
            className={`btn btn-sm btn--small px-1 px-sm-3 ${type} ${margin}`}>
             { children }
-        </Link>
+        </a>
     );
 };
 

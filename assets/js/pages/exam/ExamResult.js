@@ -1,16 +1,28 @@
 import React from 'react';
 import { InlineTex } from "react-tex";
+import { syncResult } from '../../util/requests'
 
-const TotalScore = ({ questions, answers }) => {
-    const score = questions.reduce((prev, current, index) => {
+/**
+ * grade the student's exam
+ * 
+ * @param {array} questions 
+ * @param {array} answers 
+ */
+const gradeExam = (questions, answers) => {
+    return questions.reduce((prev, current, index) => {
         return (current.answer === answers[index]) ? prev + 1 : prev;
     }, 0);
+}
 
+/**
+ * Component to show user's score and total question took.
+ */
+const TotalScore = ({ total, score }) => {
     return (
         <div className="text-center mt-2 my-2 my-md-4">
             <h5 className="text-uppercase">You Scored</h5>
             <h5 className="text-primary font-weight-bold">
-                { score }/{ questions.length }
+                { score }/{ total }
             </h5>
             <p className="small mb-1">
                 Check the summery of what you got right and wrong.
@@ -58,10 +70,16 @@ const Question = ({ index, question, answer }) => {
 };
 
 const ExamResult = ({ questions, answers }) => {
+    const score = gradeExam(questions, answers),
+          total = questions.length
+
+    syncResult('/api/sync-result', {score, total})
+            .then(res => console.log(res))
+            .catch(/* do nothing */)
     
     return (
         <React.Fragment>
-            <TotalScore questions={questions} answers={answers} />
+            <TotalScore total={total} score={score} />
             <div className="container">
                 <div className="row justify-content-center">
                     {

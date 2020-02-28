@@ -46,7 +46,7 @@ npm start
 
 # General bugs.
 - [x] countdown timer reloading.
-- [ ] Exam statistics is static.
+- [x] Exam statistics is static.
 - [x] Credit should be removed on taking exams.
 - [x] Error message on login if user doesn't exists.
 - [x] Creation of submit button on last question page.

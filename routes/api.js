@@ -4,7 +4,7 @@ const { userInfo } = require('../controllers/userController');
 const { getAllCourses,
     getCourseById } = require('../controllers/courseController');
 
-const { getQuestion } = require('../controllers/examController');
+const { getQuestion, syncResult } = require('../controllers/examController');
 
 const { getWalletBalance } = require('../controllers/walletController');
 
@@ -27,7 +27,15 @@ router.use((req, res, next) => {
     next();
 });
 
+/**
+ * Get the User's profile Information.
+ */
 router.get('/me', wait(), userInfo);
+
+/**
+ * Synchronize the User's score into their score records.
+ */
+router.post('/sync-result', syncResult)
 /*
 * Get all course from the database.
 * */

@@ -12,7 +12,7 @@ const UserInfo = ({ firstName, lastName, email, examTaken }) => {
                 <h5 className="font-weight-bold mb-0">
                     { `${firstName} ${lastName}` }
                 </h5>
-                <small>{ email } {examTaken} Exams taken</small>
+                <small>{ email } | {examTaken} { (examTaken<=1) ? 'exam' : 'exams' } taken</small>
             </div>
         </div>
     );

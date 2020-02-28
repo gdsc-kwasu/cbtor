@@ -8,20 +8,20 @@ export default class Profile extends React.Component {
             <form action="#" method="#">
                 <div className="form-row">
                     <div className="form-group col-6">
-                        <input type="text" name="firstName" placeholder="First Name" className="form-control right"/>
+                        <input type="text" name="firstName" placeholder="First Name" className="form-control right profile-right"/>
                     </div>
                     <div className="form-group col-6">
-                        <input type="text" name="lastName" placeholder="Last Name" className="form-control ml left"/>
+                        <input type="text" name="lastName" placeholder="Last Name" className="form-control ml left profile"/>
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-12">
-                        <input type="number" name="phoneNumber" placeholder="Telephone Number" className="form-control" />
+                        <input type="number" name="phoneNumber" placeholder="Telephone Number" className="form-control profile-group" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-12">
-                        <select name="College" className="form-control" placeholder="College">
+                        <select name="College" className="form-control profile-group" placeholder="College">
                             <option value="" selected>Select your College</option>
                             <option value="Agric">College Of Agriculture</option>
                             <option value="EDU">College Of Education</option>
@@ -35,12 +35,12 @@ export default class Profile extends React.Component {
                 </div>
                 <div className="form-row">
                     <div className="form-group col-12">
-                        <input type="text" name="department" placeholder="Department" className="form-control" />
+                        <input type="text" name="department" placeholder="Department" className="form-control profile-group" />
                     </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group col-12">
-                        <button className="btn btn-custom btn-block btn-success">Save</button>
+                        <button className="btn btn-custom btn-block btn-success profile-btn">Save</button>
                     </div>
                 </div>
             </form>

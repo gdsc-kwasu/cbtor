@@ -69,3 +69,4 @@ npm start
 # Features on admin dashboard.
 - [ ] Upload questions and courses.
 - [ ] Print coupons.
+- [ ] Edit profile not working

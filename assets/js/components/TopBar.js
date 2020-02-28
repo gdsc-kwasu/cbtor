@@ -30,7 +30,7 @@ const TopBar = ({ user }) => {
                     }
                 </div>
                 <div className="col-6">
-                    <LinkButton href="#" margin="mx-2">
+                    <LinkButton href="Profile" margin="mx-2">
                         Edit Profile
                     </LinkButton>
                     <LinkButton href="#" margin="mx-2" type="btn-outline-success">

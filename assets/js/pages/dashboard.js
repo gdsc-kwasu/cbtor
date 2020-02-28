@@ -8,6 +8,7 @@ import Scores from '../components/dashboard/Scores';
 import Feedback from '../components/dashboard/Feedback';
 import TakeExam from '../components/dashboard/TakeExam';
 import Password from '../components/dashboard/Password';
+import Profile from '../components/dashboard/Profile';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class Dashboard extends React.Component {
@@ -41,6 +42,7 @@ class Dashboard extends React.Component {
                             <Route path="/score" component={Scores} exact/>
                             <Route path="/feedback" component={Feedback} exact/>
                             <Route path="/password" component={Password} exact/>
+                            <Route path="/profile" component={Profile} exact/>
                         </div>
                     </div>
                 </Router>

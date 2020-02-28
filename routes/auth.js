@@ -31,6 +31,18 @@ router.get('/login', controller.redirectIfAuthenticated, (req, res) => {
     });
 });
 
+router.get('/reset', (req, res) => {
+    res.render('resetPassword',{
+        title: "Reset Your Password"
+    });
+});
+
+router.get('/reset-password/:ref', (req, res) => {
+    res.render('setPassword',{
+        title: "Set Your New Password"
+    });
+});
+
 /*
 * Handles POST Request to log the user in
 * */

@@ -66,7 +66,7 @@ npm start
 - [x] Error message on login if user doesn't exists.
 - [x] Creation of submit button on last question page.
 - [x] Edit profile not working
-- [ ] Feedback submission is inactive.
+- [x] Feedback submission is inactive.
 - [ ] Scores section should be utilized.
 - [ ] Change password not functional.
 - [ ] Email notification. (registration, empty wallet, change password)

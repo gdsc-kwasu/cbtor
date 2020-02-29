@@ -1,6 +1,9 @@
 import React from 'react';
-import Course from './Course';
 import NavBar from './NavBar';
+import Course from './Course';
+import Account from './Account';
+import User from './User';
+import Credit from './Credit';
 import ReactDOM from 'react-dom';
 import ReactNotification from 'react-notifications-component';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,8 +14,12 @@ const App = () => {
         <React.Fragment>
             <ReactNotification />
             <Router>
+                <NavBar />
                 <Switch>
-                    <Route path="/" component={NavBar} />
+                    <Route path="/" component={Course} />
+                    <Route path="/account" component={Account} />
+                    <Route path="/user" component={User} />
+                    <Route path="/credit" component={Credit} />
                 </Switch>
             </Router>
         </React.Fragment>

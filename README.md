@@ -42,6 +42,21 @@ npm run server
 npm start
 ```
 
+## Contributing.
+
+- Before contributing, ensure you create a branch for a particular feature you'd want to work on, so we wouldn't be having issues of merge conflict 
+- You can create a branch this way;
+```git 
+        git checkout -b [branch-name]
+```
+- When you're done with your fixes push to that current branch
+```git
+        git push origin HEAD
+```
+- The command above pushes your your commits to the current branch you're in.
+- Then make your Pull Request.
+
+
 # Bug fixes.
 
 # General bugs.
@@ -50,7 +65,8 @@ npm start
 - [x] Credit should be removed on taking exams.
 - [x] Error message on login if user doesn't exists.
 - [x] Creation of submit button on last question page.
-- [ ] Feedback submission is inactive.
+- [x] Edit profile not working
+- [x] Feedback submission is inactive.
 - [ ] Scores section should be utilized.
 - [ ] Change password not functional.
 - [ ] Email notification. (registration, empty wallet, change password)
@@ -69,4 +85,3 @@ npm start
 # Features on admin dashboard.
 - [ ] Upload questions and courses.
 - [ ] Print coupons.
-- [x] Edit profile not working

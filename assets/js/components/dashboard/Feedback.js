@@ -11,18 +11,17 @@ const Feedback = (props) => {
                             Do you have a complaint, or something you will like us to improve, or you
                             see some part we could do better? Let us know.
                         </p>
-                        <form action="/feedback" method="post">
-                            <div className="form-row">
-                                <div className="form-group col-12">
-                                    <textarea name="message" id="message" cols="30" rows="10" className="form-control" />
-                                </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group col-12 text-right">
-                                    <button className="btn btn-success px-4 py-2" type="submit">Send</button>
-                                </div>
-                            </div>
-                        </form>
+                        <iframe
+                            className="col-12 col-md-12 box-shadow"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSc1jzsJ7KKVobAnuxNK1CUTaJgUvjU9QD4RS1BUYGO-juSDWg/viewform?embedded=true" 
+                            width="640" 
+                            height="728" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0"
+                            overflow-y= "hidden"
+                            scrolling="no">    
+                        </iframe>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default class Profile extends React.Component {
     constructor(props) {
@@ -33,7 +32,13 @@ export default class Profile extends React.Component {
         return (
             <div className="row px-md-3 py-md-3">
                 <div className="col-12 col-md-12 box-shadow py-5 px-5">
-                    <div className="row">
+                    <h5>
+                        Edit Your Profile
+                    </h5>
+                    <p>
+                        Edit your profile here. Your Telephone number and college is required.
+                    </p>
+                    <div className="row mt-4">
                         <div className="col-12 col-md-8">
                             <form action="#" method="#">
                                 <div className="form-row">

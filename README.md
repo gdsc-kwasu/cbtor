@@ -65,6 +65,7 @@ npm start
 - [x] Credit should be removed on taking exams.
 - [x] Error message on login if user doesn't exists.
 - [x] Creation of submit button on last question page.
+- [x] Edit profile not working
 - [ ] Feedback submission is inactive.
 - [ ] Scores section should be utilized.
 - [ ] Change password not functional.
@@ -84,4 +85,3 @@ npm start
 # Features on admin dashboard.
 - [ ] Upload questions and courses.
 - [ ] Print coupons.
-- [x] Edit profile not working

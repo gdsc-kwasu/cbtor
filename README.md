@@ -42,6 +42,21 @@ npm run server
 npm start
 ```
 
+## Contributing.
+
+- Before contributing, ensure you create a branch for a particular feature you'd want to work on, so we wouldn't be having issues of merge conflict 
+- You can create a branch this way;
+```git 
+        git checkout -b [branch-name]
+```
+- When you're done with your fixes push to that current branch
+```git
+        git push origin HEAD
+```
+- The command above pushes your your commits to the current branch you're in.
+- Then make your Pull Request.
+
+
 # Bug fixes.
 
 # General bugs.

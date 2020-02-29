@@ -34,6 +34,11 @@ export default class Profile extends React.Component {
             <div className="row px-md-3 py-md-3">
                 <div className="col-12 col-md-12 box-shadow py-5 px-5">
                     <div className="row">
+                        <p className=".mt-5.hero-text__info">
+                            Fill in your credentials in the form below, and if you peradventure made a mistake 
+                            while making this edit, 
+                            you can still come back here to re-edit. Cheers!
+                        </p>
                         <div className="col-12 col-md-8">
                             <form action="#" method="#">
                                 <div className="form-row">

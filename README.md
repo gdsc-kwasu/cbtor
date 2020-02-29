@@ -68,7 +68,7 @@ npm start
 - [x] Edit profile not working
 - [x] Feedback submission is inactive.
 - [ ] Scores section should be utilized.
-- [ ] Change password not functional.
+- [x] Change password not functional.
 - [ ] Email notification. (registration, empty wallet, change password)
 - [ ] Image upload from user.
 - [ ] User inforamtion.

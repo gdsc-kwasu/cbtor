@@ -7,7 +7,7 @@ const router = express.Router();
 * and has administrator access
 * */
 router.use((req, res, next) => {
-    if (!req.user || !req.user.allow)
+    if (!req.user && !req.user.isAdmin)
         return res.redirect('/login');
     next();
 });

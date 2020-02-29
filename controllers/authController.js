@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 // Rip off user model from mongoose.
-const User = mongoose.model('User');
+const User = mongoose.model('User')
 const Coupon = mongoose.model('Coupon');
 
 /*
@@ -57,6 +57,7 @@ exports.logout = (req, res) => {
     // Maybe a flash message here.
     res.redirect('/login');
 };
+
 
 /*
 * Check if a user is signed in, allow the request to

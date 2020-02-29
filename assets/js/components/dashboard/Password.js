@@ -18,7 +18,7 @@ const Password = (props) => {
                                         <div className="form-group col-12">
                                             <input type="password"
                                                    className="form-control"
-                                                   placeholder="Old password"
+                                                   placeholder="Old Password"
                                                    name="old_password"
                                                    required={true}/>
                                         </div>
@@ -27,7 +27,7 @@ const Password = (props) => {
                                         <div className="form-group col-12">
                                             <input type="password"
                                                    className="form-control"
-                                                   placeholder="New password"
+                                                   placeholder="New Password"
                                                    name="password"
                                                    required={true}/>
                                         </div>
@@ -36,7 +36,7 @@ const Password = (props) => {
                                         <div className="form-group col-12">
                                             <input type="password"
                                                    className="form-control"
-                                                   placeholder="Confirm new password"
+                                                   placeholder="Confirm Password"
                                                    name="confirm_password"
                                                    required={true}/>
                                         </div>

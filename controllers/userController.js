@@ -18,3 +18,27 @@ exports.userInfo = (req, res, next) => {
                 })
         })
 };
+
+exports.updateUser = (req, res, next) => {
+    if (!(req.body.password === req.body.confirm_password)) {
+        req.flash('error','Password confirmation does not match')
+        return res.redirect('/password');
+    }
+
+    User.findById(req.user._id, (err, user) => {
+        if (err) {
+            req.flash('error','Old Password does not match')
+            return res.redirect('/password');
+        }
+
+        user.changePassword(req.body.old_password, req.body.password, (err) => {
+            if (err) {
+                req.flash('error','Old Password does not match')
+                res.redirect('/password');
+            }
+
+            req.flash('success','Password changes successfully')
+            return res.redirect('/password');
+        })
+    })
+}

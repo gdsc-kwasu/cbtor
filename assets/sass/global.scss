@@ -37,7 +37,7 @@
 }
 
 @include media-breakpoint-up('md') {
-    .navbar {
+    .navbar--none {
         display: none;
     }
     .box-shadow {
@@ -58,10 +58,10 @@
 
 // Make Navbar slide from left instead of top
 @media (max-width: 768px) {
-    .navbar {
+    .navbar--none {
         background-color: #ffffff;
     }
-    .navbar-collapse {
+    .navbar-collapse--none {
         position: fixed;
         top: 0;
         left: 0;
@@ -73,7 +73,7 @@
         background-color: #3496DA;
         z-index: 2000;
     }
-    .navbar-collapse.collapsing {
+    .navbar-collapse--none.collapsing {
         height: 100%;
         -webkit-transition: left 0.3s ease;
         -o-transition: left 0.3s ease;
@@ -81,7 +81,7 @@
         transition: left 0.3s ease;
         left: -100%;
     }
-    .navbar-collapse.show {
+    .navbar-collapse--none.show {
         left: 0;
         -webkit-transition: left 0.3s ease-in;
         -o-transition: left 0.3s ease-in;

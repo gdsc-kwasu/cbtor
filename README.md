@@ -79,7 +79,6 @@ npm start
 - [ ] No notification button.
 
 # Bugs in mobile veiw.
-- [ ] No edit profile.
 - [ ] No contact support.
 
 # Features on admin dashboard.

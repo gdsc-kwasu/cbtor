@@ -18,6 +18,32 @@ export const getUserScores = () => {
 }
 
 /**
+ * Get all admins account from API
+ */
+export const adminGetAccounts = () => {
+    return fetch('/api/manage/account')
+        .then(res => res.json())
+}
+
+/**
+ * Send create account request to the API
+ * @param {object} data 
+ */
+export const adminCreateAccount = (data) => {
+    return postRequest('/api/manage/account', data)
+        .then(res => res.json())
+}
+
+/**
+ * Send delete account request to the API
+ * @param {string} id admin ID
+ */
+export const adminDeleteAccount = (id) => {
+    return deleteRequest('/api/manage/account', {id})
+        .then(res => res.json())
+}
+
+/**
  * send generated coupon credit to the server API.
  * @param {array} coupon array of coupon objects.
  */

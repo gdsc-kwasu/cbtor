@@ -4,6 +4,7 @@ const questionUploadRule = require('../validation/QuestionUploadRule');
 const Question = mongoose.model('Question');
 const Course = mongoose.model('Course')
 const Coupon = mongoose.model('Coupon')
+const User = mongoose.model('User')
 
 
 exports.uploadQuestion = [questionUploadRule, (req, res, next) => {
@@ -63,5 +64,50 @@ exports.deleteCourse = (req, res, next) => {
         })
         .catch(error => {
             res.status(400).json(error)
+        })
+}
+
+/**
+ * Add administrator account
+ */
+exports.createAccount = (req, res, next) => {
+    const couponCredit = Math.floor(Math.random() * (Math.random() * 100))
+    const user = new User(Object.assign(req.body, { isAdmin: true, couponCredit }))
+    User.register(user, req.body.password, (error, account) => {
+        if (error) {
+            res.status(400).json({ message: 'Failed to create account', error })
+        }
+
+        res.json(account)
+    })
+}
+
+/**
+ * Get all administrator accounts.
+ */
+exports.getAccounts = (req, res, next) => {
+    User.find({ isAdmin: true })
+        .then(users => {
+            res.json(users)
+        })
+        .catch((error) => {
+            res.status(400).json({ error })
+        })
+}
+
+/**
+ * Delete an Administrator account's by ID.
+ */
+exports.deleteAccount = (req, res, next) => {
+    if (req.user._id == req.body.id) {
+        return res.status(400).json({ error: 'Cannot remove your account'})
+    }
+
+    User.findOneAndDelete(req.body.id)
+        .then(user => {
+            res.json(user)
+        })
+        .catch(error => {
+            res.status(400).json({error})
         })
 }

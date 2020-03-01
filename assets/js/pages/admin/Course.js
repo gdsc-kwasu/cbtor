@@ -27,7 +27,7 @@ class Course extends React.Component {
 
         this.state = {
             question: '',
-            answer: 'A',
+            answer: 'Pick Correct Option',
             options: [],
             course: '',
         };
@@ -103,7 +103,7 @@ class Course extends React.Component {
                     className="select--custom"
                     value={active}
                     onChange={({ target }) => this.handleOnChange('course', target.value)}>
-                    <option value="">Pick Course</option>
+                    <option value="">Pick a Course</option>
                     {
                         courses.map(c => (<option value={c._id} key={c._id}>{c.code}</option>))
                     }
@@ -117,7 +117,7 @@ class Course extends React.Component {
                     <div className="col-12 col-sm-10 col-md-8">
                         <h6 className="text-uppercase">Upload University Course</h6>
                         <p>
-                            Throw some questions in the database, shall we?
+                            Let's throw some questions in the database, shall we?
                         </p>
                     </div>
                 </div>
@@ -134,6 +134,7 @@ class Course extends React.Component {
                                         className="select--custom"
                                         value={answer}
                                         onChange={({ target }) => this.handleOnChange('answer', target.value)}>
+                                            <option value='choose'>...Pick Correct Option...</option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -142,7 +143,7 @@ class Course extends React.Component {
                                 </div>
                             </div>
                             <TextAreaRow
-                                label="What is the question?"
+                                label="Input the question?"
                                 value={question}
                                 onChange={value => this.handleOnChange('question', value)}
                             />

@@ -61,7 +61,7 @@ class Scores extends React.Component {
                     <h5>Your Scores</h5>
                     <p>
                         A short brief of your scores in past examinations took on CBTor. Don't worry if
-                        nothing appears yet, that means you have not taken any exam yet.
+                        nothing appears yet, it means you have not taken any exam yet.
                     </p>
                     { scores.length 
                         ? <ScoreTable scores={scores} />

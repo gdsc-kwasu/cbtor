@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       flexWrap: 'wrap',
       backgroundColor: '#fff',
+      paddingTop: 25,
+      paddingBottom: 25
     },
     section: {
       margin: 5,

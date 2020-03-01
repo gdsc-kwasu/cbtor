@@ -15,7 +15,7 @@ const UserInfo = ({ firstName, lastName, email, examTaken }) => {
                 <h5 className="font-weight-bold mb-0">
                     { `${firstName} ${lastName}` }
                 </h5>
-                <small>{ email } <br/> { examTaken } Exams taken</small>
+                <small>{ email } | {examTaken} { (examTaken<=1) ? 'exam' : 'exams' } taken</small>
             </div>
         </div>
     );
@@ -66,7 +66,7 @@ const NavBar = ({ user }) => {
                     {
                         (isAdmin === true) &&
                         <div className='mt-0'>
-                            <ul className="sidebar--admin__list">
+                            <ul className="sidebar__list">
                                 <li>
                                     <a href="/manage">Admin</a>
                                 </li>

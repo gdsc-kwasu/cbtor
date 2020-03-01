@@ -90,7 +90,7 @@ class ExamSelection extends React.Component {
                         <div className="col-11 col-md-4 exam-select">
                             <h6 className="exam-select__title">Recommended</h6>
                             <small>
-                                The standard type of exam you will meet in real-life.
+                                The standard type of exam you will face in reality.
                                 This will simulate the actual exam experience for you.
                             </small>
                             <div className="my-4 py-2 d-flex justify-content-between">
@@ -112,8 +112,8 @@ class ExamSelection extends React.Component {
                         <div className="col-11 col-md-4 exam-select">
                             <h6 className="exam-select__title">Customize</h6>
                             <small>
-                                Describe how the exam should be &mdash; be in charge.
-                                The amount of question will determine the duration.
+                                Describe how your exam should be &mdash; be in charge.
+                                The amount of questions chosen will determine the duration.
                             </small>
                             <div className="my-3 pt-4 pb-3">
                                 <InputRange minValue={10} maxValue={80} onChange={value => this.setState({ value })}

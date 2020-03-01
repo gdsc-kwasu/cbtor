@@ -25,7 +25,7 @@ const TotalScore = ({ total, score }) => {
                 { score }/{ total }
             </h5>
             <p className="small mb-1">
-                Check the summery of what you got right and wrong.
+                Check the summary of the options you got right or wrong.
             </p>
             <a href="/dashboard" className="btn btn-primary">Return to Dashboard</a>
         </div>

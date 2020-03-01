@@ -50,11 +50,11 @@ exports.getQuestion = async (req, res, next) => {
         ? res.json(
             JSONFormat(
                 await retrieveQFromDatabase(course._id, course.standard.question),
-                course.standard.time))
+                course.standard.time, course._id))
         : res.json(
             JSONFormat(
                 await retrieveQFromDatabase(course._id, Number(amount)),
-                Math.floor(amount * 0.90)));
+                Math.floor(amount * 0.90), course._id));
 };
 
 /*
@@ -77,9 +77,10 @@ const retrieveQFromDatabase = async (id, amount) => {
 * Data structure of the question API response.
 * (This data structure is subjected to change).
 * */
-const JSONFormat = (question, time) => {
+const JSONFormat = (question, time, course) => {
     return {
         duration: time,
         question,
+        course
     };
 };

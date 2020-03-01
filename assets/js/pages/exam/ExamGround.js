@@ -43,13 +43,14 @@ class Examination extends React.Component {
             answers: null,
             duration: null,
             questions: null,
+            courseId: null,
         };
 
         this.handleOptionClick = this.handleOptionClick.bind(this)
     }
 
     componentDidMount() {
-        const { duration, question } = this.props.exam;
+        const { duration, question, course } = this.props.exam;
         const { isDone } = this.props
 
         const answers = question.map(() => null);
@@ -59,6 +60,7 @@ class Examination extends React.Component {
             active: 0,
             duration,
             isDone,
+            course,
         });
     }
 
@@ -81,13 +83,13 @@ class Examination extends React.Component {
     }
 
     render() {
-        const { answers, questions } = this.state
+        const { answers, questions, course } = this.state
         const { handleExamTerminate, isDone } = this.props
 
         if (!questions) return <PulseLoader />;
 
 
-        if (isDone) return <ExamResult answers={answers} questions={questions} />;
+        if (isDone) return <ExamResult answers={answers} questions={questions} course={course} />;
 
         return (
             <React.Fragment>

@@ -23,7 +23,8 @@ exports.userInfo = (req, res, next) => {
  * Fetch User's scores record.
  */
 exports.getScores = (req, res, next) => {
-    Score.find({ user: req.user._id }, { total: 1, score: 1})
+    Score.find({ user: req.user._id }, { total: 1, score: 1, course: 1})
+        .populate('course', { title: 1, code: 1})
         .then(score => res.json(score))
         .catch(next)
 }

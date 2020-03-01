@@ -69,11 +69,11 @@ const Question = ({ index, question, answer }) => {
     );
 };
 
-const ExamResult = ({ questions, answers }) => {
+const ExamResult = ({ questions, answers, course }) => {
     const score = gradeExam(questions, answers),
           total = questions.length
 
-    syncResult('/api/sync-result', {score, total})
+    syncResult('/api/sync-result', {score, total, course})
             .then(() => {})
             .catch(/* do nothing */)
     

@@ -1,8 +1,8 @@
 import React from 'react';
-import PulseLoader from '../../components/PulseLoader';
 import PropTypes from 'prop-types';
 import InputRange from 'react-input-range';
 import "react-input-range/lib/css/index.css";
+import PulseLoader from '../../components/PulseLoader';
 
 /*
 * A less generic loader component for the exam

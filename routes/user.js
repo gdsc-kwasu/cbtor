@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { updateUser } = require('../controllers/userController')
 const { loadCreditToWallet } = require('../controllers/walletController');
 
 /*
@@ -11,6 +12,10 @@ router.use((req, res, next) => {
         return res.redirect('/login');
     next();
 });
+
+//upDate password
+
+router.post('/password', updateUser)
 
 //router.get('/wallet', );
 router.post('/wallet', loadCreditToWallet);

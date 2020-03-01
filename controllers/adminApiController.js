@@ -71,6 +71,10 @@ exports.deleteCourse = (req, res, next) => {
  * Add administrator account
  */
 exports.createAccount = (req, res, next) => {
+    if (!req.user.isSuperAdmin) {
+        return res.status(401).json({}) //hack
+    }
+
     const couponCredit = Math.floor(Math.random() * (Math.random() * 100))
     const user = new User(Object.assign(req.body, { isAdmin: true, couponCredit }))
     User.register(user, req.body.password, (error, account) => {
@@ -86,6 +90,10 @@ exports.createAccount = (req, res, next) => {
  * Get all administrator accounts.
  */
 exports.getAccounts = (req, res, next) => {
+    if (!req.user.isSuperAdmin) {
+        return res.status(401).json({}) //hack
+    }
+
     User.find({ isAdmin: true })
         .then(users => {
             res.json(users)
@@ -99,6 +107,10 @@ exports.getAccounts = (req, res, next) => {
  * Delete an Administrator account's by ID.
  */
 exports.deleteAccount = (req, res, next) => {
+    if (!req.user.isSuperAdmin) {
+        return res.status(401).json({}) // hack
+    }
+
     if (req.user._id == req.body.id) {
         return res.status(400).json({ error: 'Cannot remove your account'})
     }

@@ -16,10 +16,10 @@ const App = () => {
             <Router>
                 <NavBar />
                 <Switch>
-                    <Route path="/" component={Course} />
-                    <Route path="/account" component={Account} />
-                    <Route path="/user" component={User} />
-                    <Route path="/credit" component={Credit} />
+                    <Route path="/manage" component={Course} exact />
+                    <Route path="/manage/account" component={Account} exact />
+                    <Route path="/manage/user" component={User} exact />
+                    <Route path="/manage/credit" component={Credit} exact />
                 </Switch>
             </Router>
         </React.Fragment>

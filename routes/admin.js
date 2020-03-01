@@ -12,7 +12,7 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get(['/', '/credit', '/account', '/users'], (req, res, next) => {
+router.get(['/', '/courses', '/credit', '/account', '/users'], (req, res, next) => {
     res.render('admin/index', {
         title: 'CBTor Cpanel'
     })

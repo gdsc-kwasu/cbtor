@@ -69,8 +69,7 @@ npm start
 - [x] Feedback submission is inactive.
 - [ ] Scores section should be utilized.
 - [x] Change password not functional.
-- [ ] Email notification. (registration, empty wallet, change password)
-- [ ] Image upload from user.
+- [x] Email notification. (registration, empty wallet, change password)
 - [ ] User inforamtion.
 - [ ] Enforce SSL.
 - [ ] Forgot password.

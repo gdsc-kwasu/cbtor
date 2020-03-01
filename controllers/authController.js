@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
+const Mailer = require('../utility/mailer')
 
 // Rip off user model from mongoose.
 const User = mongoose.model('User')
@@ -24,6 +25,11 @@ exports.createUser = async (req, res, next) => {
     User.register(user, req.body.password, (err) => {
         if (err) return next(err);
 
+        // Send welcome email to user...
+        (new Mailer('mails/welcome', { user }))
+            .subject('Welcome to CBTor')
+            .send(user.email)
+        
         // Success: Move onto the next Middleware.
         next();
     })

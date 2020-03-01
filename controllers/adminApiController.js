@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const questionUploadRule = require('../validation/QuestionUploadRule');
 
 const Question = mongoose.model('Question');
+const Course = mongoose.model('Course')
 const Coupon = mongoose.model('Coupon')
 
 
@@ -27,4 +28,40 @@ exports.createCoupons = (req, res, next) => {
             res.json(response)
         })
         .catch(next)
+}
+
+exports.getAllCourses = (req, res, next) => {
+    Course.find({}, { code: 1, title: 1})
+        .then(courses => {
+            res.json(courses)
+        })
+        .catch(next)
+}
+
+exports.createCourse = (req, res, next) => {
+    Course.create({
+        code: req.body.code,
+        title: req.body.title,
+        standard: {
+            time: 45,
+            question: 45 // Dummy.
+        }
+    })
+    .then(course => res.json(course))
+    .catch(error => {
+        res.status(400).json(error)
+    })
+}
+
+/**
+ * Delete a course by ID
+ */
+exports.deleteCourse = (req, res, next) => {
+    Course.findByIdAndDelete(req.body.id)
+        .then(course => {
+            res.json(course)
+        })
+        .catch(error => {
+            res.status(400).json(error)
+        })
 }

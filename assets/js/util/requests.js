@@ -27,6 +27,32 @@ export const adminCreateCoupon = (coupon) => {
 }
 
 /**
+ * Get all courses from the API
+ */
+export const adminGetAllCourses = () => {
+    return fetch('/api/manage/courses')
+        .then(res => res.json())
+}
+
+/**
+ * Send create course Request to API
+ * @param {object} data request object
+ */
+export const adminCreateCourse = (data) => {
+    return postRequest('/api/manage/courses', data)
+        .then(res => res.json())
+}
+
+/**
+ * send remove course request to the API.
+ * @param {object} data 
+ */
+export const adminRemoveCourse = (data) => {
+    return deleteRequest('/api/manage/courses', data)
+        .then(res => res.json())
+}
+
+/**
  * Helper function to setup Fetch for POST request.
  * 
  * @param {string} url API endpoint URL
@@ -35,6 +61,21 @@ export const adminCreateCoupon = (coupon) => {
 function postRequest(url, data) {
     return fetch(url, {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    })
+}
+
+/**
+ * An Helper function to setup Fetch for DELETE request.
+ * @param {string} url 
+ * @param {object} data 
+ */
+function deleteRequest(url, data) {
+    return fetch(url, {
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },

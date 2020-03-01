@@ -10,6 +10,11 @@ const NavbarLink = () => {
                 </NavLink>
             </li>
             <li className='nav-item mx-3 font-weight-bold'>
+                <NavLink to="/manage/courses" activeClassName="active" className='text-white text-decoration-none'>
+                   COURSES
+                </NavLink>
+            </li>
+            <li className='nav-item mx-3 font-weight-bold'>
                 <NavLink to="/manage/account" activeClassName="active" className='text-white text-decoration-none'>
                     ACCOUNT
                 </NavLink>

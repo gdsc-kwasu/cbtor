@@ -172,3 +172,12 @@
     width: 55px;
     height: 55px;
 }
+
+.link {
+    cursor: pointer;
+    color: $primary;
+
+    &:hover {
+        color: darken($primary, 10%);
+    }
+}

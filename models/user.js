@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    allow: {
+    isAdmin: {
         type: Boolean,
         required: true,
         default: false,

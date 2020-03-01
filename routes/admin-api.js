@@ -3,9 +3,18 @@ const { uploadQuestion,
     createCoupons, 
     getAllCourses, 
     createCourse, 
-    deleteCourse } = require('../controllers/adminApiController');
+    deleteCourse, 
+    createAccount, 
+    getAccounts, 
+    deleteAccount } = require('../controllers/adminApiController');
 
 const router = express.Router();
+
+router.get('/account', getAccounts)
+
+router.post('/account', createAccount)
+
+router.delete('/account', deleteAccount)
 
 router.post('/question', uploadQuestion);
 

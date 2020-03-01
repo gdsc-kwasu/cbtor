@@ -8,16 +8,18 @@ const ScoreTable = ({ scores }) => {
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Course</th>
                         <th>Score</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        scores.map(({total, score, _id}, index) => {
+                        scores.map(({total, score, _id, course}, index) => {
                             return (
                                 <tr key={_id}>
                                     <td>{index + 1}</td>
+                                    <td>{course.title} (<strong>{course.code}</strong>)</td>
                                     <td>{score}</td>
                                     <td>{total}</td>
                                 </tr>

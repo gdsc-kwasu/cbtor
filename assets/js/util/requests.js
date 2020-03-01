@@ -18,6 +18,15 @@ export const getUserScores = () => {
 }
 
 /**
+ * send generated coupon credit to the server API.
+ * @param {array} coupon array of coupon objects.
+ */
+export const adminCreateCoupon = (coupon) => {
+    return postRequest('/api/manage/credit', coupon)
+        .then(res => res.json())
+}
+
+/**
  * Helper function to setup Fetch for POST request.
  * 
  * @param {string} url API endpoint URL

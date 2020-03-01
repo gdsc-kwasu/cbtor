@@ -1,8 +1,10 @@
 const express = require('express');
-const { uploadQuestion } = require('../controllers/adminApiController');
+const { uploadQuestion, createCoupons } = require('../controllers/adminApiController');
 
 const router = express.Router();
 
 router.post('/question', uploadQuestion);
+
+router.post('/credit', createCoupons)
 
 module.exports = router;

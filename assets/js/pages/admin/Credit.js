@@ -1,6 +1,7 @@
 import React from 'react'
 import { shuffle } from 'lodash'
 import PDFLoader from './PDFLoader'
+import { adminCreateCoupon } from '../../util/requests'
 
 class Credit extends React.Component {
     constructor(props) {
@@ -36,17 +37,22 @@ class Credit extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
 
-        const { amount, credit } = this.state
-        const coupons = []
+        const { amount, credit, coupons } = this.state
+        if (coupons) return 
+
+        const credits = []
+        
         for (let i = 1; i <= amount; i++) {
-            coupons.push({ 
+            credits.push({ 
                 pin: Credit.randomPin(),
                 amount: credit
             })
         }
-        this.setState({
-            coupons
-        })
+
+        adminCreateCoupon({ coupons: credits })
+            .then(coupons => this.setState({ coupons }))
+            .catch(console.log)
+
     }
 
     render() {

@@ -6,19 +6,42 @@ import { PDFDownloadLink,
     Document, 
     StyleSheet } from '@react-pdf/renderer';
 
+
 const styles = StyleSheet.create({
     page: {
       flexDirection: 'row',
       flexWrap: 'wrap',
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
     },
     section: {
-      margin: 10,
+      margin: 5,
       padding: 10,
-      flexGrow: 1
+      flexGrow: 1,
+      paddingLeft: 15,
+      paddingRight: 15,
+      width: 150
     },
     header: {
-        fontSize: 14
+        fontSize: 13,
+        fontStyle: 'italic',
+        textAlign: "center",
+        marginTop: 5,
+        marginBottom: 5,
+        fontWeight: 100     
+    },
+    heroText: {
+        textAlign: 'center',
+        fontSize: 12,
+    },
+    pin: {
+        textTransform: 'uppercase',
+        fontSize: 12
+    },
+    note: {
+        fontSize: 5,
+        fontStyle: 'italic',
+        textAlign: "center",
+        marginTop: 2
     }
   });
 
@@ -30,8 +53,10 @@ const CouponPDF = ({ credits }) => {
                         credits.map(({ amount, pin}) => {
                             return (
                                 <View style={styles.section} key={ pin }>
-                                    <Text style={styles.header}>{ amount}</Text>
-                                    <Text>{ pin }</Text>
+                                    <Text style={styles.heroText}>CBTor Coupon</Text>
+                                    <Text style={styles.header}>{ amount} cec</Text>
+                                    <Text style={styles.pin}>Pin: { pin }</Text>
+                                    <Text style={styles.note}>Note: deduction of 10 cec will be made per exam taken</Text>
                                 </View>
                             )
                         })

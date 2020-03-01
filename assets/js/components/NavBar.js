@@ -9,7 +9,7 @@ const UserInfo = ({ firstName, lastName, email, examTaken }) => {
     return (
         <div className="pt-4">
             <div className='d-flex justify-content-center'>
-                <img src="/images/adedeji.png" alt={ firstName } className="user-avatar"/>
+                <img src="/images/user.png" alt={ firstName } className="user-avatar"/>
             </div>
             <div className="text-center user--details pt-2">
                 <h5 className="font-weight-bold mb-0">

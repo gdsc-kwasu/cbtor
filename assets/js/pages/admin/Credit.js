@@ -1,4 +1,5 @@
 import React from 'react'
+import notify from './notify'
 import { shuffle } from 'lodash'
 import PDFLoader from './PDFLoader'
 import { adminCreateCoupon } from '../../util/requests'
@@ -41,7 +42,7 @@ class Credit extends React.Component {
         if (coupons) return 
 
         const credits = []
-        
+
         for (let i = 1; i <= amount; i++) {
             credits.push({ 
                 pin: Credit.randomPin(),
@@ -50,7 +51,10 @@ class Credit extends React.Component {
         }
 
         adminCreateCoupon({ coupons: credits })
-            .then(coupons => this.setState({ coupons }))
+            .then(coupons => {
+                this.setState({ coupons })
+                notify('Success', 'Coupons created successfully. Please download and print the PDF.')
+            })
             .catch(console.log)
 
     }

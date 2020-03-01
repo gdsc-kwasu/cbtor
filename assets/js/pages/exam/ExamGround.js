@@ -6,21 +6,51 @@ import PulseLoader from '../../components/PulseLoader';
 
 class ExamGround extends React.Component {
     constructor(props) {
+        super(props)
+
+        this.state = {
+            isDone: false
+        }
+
+        this.handleExamTerminate = this.handleExamTerminate.bind(this)
+    }
+
+    handleExamTerminate() {
+        this.setState({ isDone: true })
+    }
+
+    render() {
+        const { isDone } = this.state
+        const { exam } = this.props
+
+        if (!this.props.exam) return <PulseLoader />;
+
+        return (
+            <React.Fragment>
+                {
+                    !isDone && <Timer terminateExam={this.handleExamTerminate} duration={exam.duration} />
+                }
+                <Examination exam={exam} handleExamTerminate={this.handleExamTerminate} isDone={isDone} />
+            </React.Fragment>
+        )
+    }
+}
+class Examination extends React.Component {
+    constructor(props) {
         super(props);
 
         this.state = {
             answers: null,
             duration: null,
             questions: null,
-            isDone: false,
         };
 
-        this.handleExamTerminate = this.handleExamTerminate.bind(this);
         this.handleOptionClick = this.handleOptionClick.bind(this)
     }
 
     componentDidMount() {
         const { duration, question } = this.props.exam;
+        const { isDone } = this.props
 
         const answers = question.map(() => null);
         this.setState({
@@ -28,6 +58,7 @@ class ExamGround extends React.Component {
             questions: question,
             active: 0,
             duration,
+            isDone,
         });
     }
 
@@ -50,7 +81,8 @@ class ExamGround extends React.Component {
     }
 
     render() {
-        const { answers, questions, isDone, duration } = this.state
+        const { answers, questions } = this.state
+        const { handleExamTerminate, isDone } = this.props
 
         if (!questions) return <PulseLoader />;
 
@@ -59,12 +91,11 @@ class ExamGround extends React.Component {
 
         return (
             <React.Fragment>
-                <Timer terminateExam={this.handleExamTerminate} duration={duration} />
                 <Questions 
                     answers={answers} 
                     questions={questions}
                     onAnswerClick={this.handleOptionClick} 
-                    terminateExam={this.handleExamTerminate} />
+                    terminateExam={handleExamTerminate} />
             </React.Fragment>
         );
     }

@@ -74,7 +74,7 @@ const ExamResult = ({ questions, answers }) => {
           total = questions.length
 
     syncResult('/api/sync-result', {score, total})
-            .then(res => console.log(res))
+            .then(() => {})
             .catch(/* do nothing */)
     
     return (

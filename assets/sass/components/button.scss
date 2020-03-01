@@ -8,6 +8,20 @@
     }
 }
 
+.btn--create {
+    color: $blue;
+    font-weight: bold;
+}
+
+.btn--create:hover {
+    background-color: $blue;
+    color: white;
+}
+
+.btn-outline-blue {
+    border: 1px solid $blue;
+}
+
 .btn-transparent {
     background-color: transparent;
     border: none;

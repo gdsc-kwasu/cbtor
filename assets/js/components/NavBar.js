@@ -26,7 +26,7 @@ const UserInfo = ({ firstName, lastName, email, examTaken }) => {
 * screens.
 * */
 const NavBar = ({ user }) => {
-    const { email, firstName, lastName, examTaken } = user;
+    const { email, firstName, lastName, examTaken, isAdmin } = user;
     return (
         <React.Fragment>
             <nav className="navbar navbar-light navbar--none">
@@ -63,6 +63,16 @@ const NavBar = ({ user }) => {
                         <div className="sidebar__padded sidebar__divider">
                         </div>
                     </div>
+                    {
+                        (isAdmin === true) &&
+                        <div className='mt-0'>
+                            <ul className="sidebar--admin__list">
+                                <li>
+                                    <a href="/manage">Admin</a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
                     <div>
                         <ul className="sidebar__list">
                             <li><a href="#" data-toggle="modal" data-target="#logout-modal">Logout</a></li>

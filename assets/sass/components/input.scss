@@ -21,3 +21,7 @@
 .form-small {
     font-size: .8rem !important;
 }
+
+.input--control:focus {
+    border: 1px solid $blue;
+}

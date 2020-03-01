@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
                 <Router>
                     <NavBar user={user}/>
                     { /* Sidebar goes in here */}
-                    <SideBar />
+                    <SideBar admin={user.isAdmin} />
                     <div className="row justify-content-end">
                         <div className="col-12 col-md-9">
                             <TopBar user={user} />

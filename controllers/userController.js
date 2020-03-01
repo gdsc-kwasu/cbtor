@@ -19,6 +19,18 @@ exports.userInfo = (req, res, next) => {
         })
 };
 
+/**
+ * Fetch User's scores record.
+ */
+exports.getScores = (req, res, next) => {
+    Score.find({ user: req.user._id }, { total: 1, score: 1})
+        .then(score => res.json(score))
+        .catch(next)
+}
+
+/**
+ * Update user's password (password change).
+ */
 exports.updateUser = (req, res, next) => {
     if (!(req.body.password === req.body.confirm_password)) {
         req.flash('error','Password confirmation does not match')

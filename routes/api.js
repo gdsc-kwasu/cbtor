@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { userInfo } = require('../controllers/userController');
+const { userInfo, getScores } = require('../controllers/userController');
 const { getAllCourses,
     getCourseById } = require('../controllers/courseController');
 
@@ -31,6 +31,11 @@ router.use((req, res, next) => {
  * Get the User's profile Information.
  */
 router.get('/me', wait(), userInfo);
+
+/**
+ * Get all user score records.
+ */
+router.get('/scores', getScores)
 
 /**
  * Synchronize the User's score into their score records.

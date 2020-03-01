@@ -10,6 +10,14 @@ export const syncResult = (url, data) => {
 }
 
 /**
+ * Get the user's score from the API
+ */
+export const getUserScores = () => {
+    return fetch('/api/scores')
+        .then(res => res.json())
+}
+
+/**
  * Helper function to setup Fetch for POST request.
  * 
  * @param {string} url API endpoint URL

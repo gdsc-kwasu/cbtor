@@ -67,10 +67,10 @@ npm start
 - [x] Creation of submit button on last question page.
 - [x] Edit profile not working
 - [x] Feedback submission is inactive.
-- [ ] Scores section should be utilized.
+- [x] Scores section should be utilized.
 - [x] Change password not functional.
 - [x] Email notification. (registration, empty wallet, change password)
-- [ ] User inforamtion.
+- [x] User inforamtion.
 - [ ] Enforce SSL.
 - [ ] Forgot password.
 

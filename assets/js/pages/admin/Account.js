@@ -34,7 +34,7 @@ class Account extends React.Component {
                                 <div className="form-group col-6">
                                     <input 
                                         type="text"
-                                        className="form-control" 
+                                        className="form-control input--control" 
                                         placeholder='First Name'
                                         name='firstName'
                                         value={this.state.firstName}
@@ -44,7 +44,7 @@ class Account extends React.Component {
                                 <div className="form-group col-6">
                                     <input 
                                         type="text" 
-                                        className="form-control" 
+                                        className="form-control input--control" 
                                         placeholder='Last Name'
                                         name='lastName'
                                         value={this.state.lastName}
@@ -56,7 +56,7 @@ class Account extends React.Component {
                             <div className="form-group my-2">
                                 <input 
                                     type="email" 
-                                    className="form-control" 
+                                    className="form-control input--control" 
                                     placeholder='Email Address'
                                     name='email'
                                     value={this.state.email}
@@ -67,7 +67,7 @@ class Account extends React.Component {
                             <div className="form-group my-4">
                                 <input 
                                     type="password" 
-                                    className="form-control" 
+                                    className="form-control input--control" 
                                     placeholder='Password'
                                     name='password'
                                     value={this.state.password}
@@ -77,7 +77,7 @@ class Account extends React.Component {
                             <div className="form-group my-4">
                                 <input 
                                     type="password" 
-                                    className="form-control" 
+                                    className="form-control input--control" 
                                     placeholder='Confirm Password'
                                     name='confirmPassword'
                                     value={this.state.confirmPassword}

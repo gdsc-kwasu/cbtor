@@ -59,6 +59,8 @@
     }
 }
 
+
+
 @include media-breakpoint-down('md') {
     .sidebar__padded {
         padding: 5px 30px;
@@ -85,6 +87,12 @@
         margin-left: 5px;
         & a {
             padding: 10px 10px;
+        }
+    }
+    .sidebar--admin__list {
+        margin-left: 5px;
+        & a {
+            padding: 1px 10px;
         }
     }
 }

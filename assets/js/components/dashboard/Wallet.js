@@ -27,13 +27,14 @@ class Wallet extends React.Component {
                             <div className="text-center">
                                 <i className="fas fa-wallet icon-wallet"/>
                                 <h5 className="font-weight-bold text-primary">
-                                    &#8358;{ this.state.wallet.credit }
+                                    { this.state.wallet.credit } CEC
                                 </h5>
                                 <h6>My Wallet Balance</h6>
                                 <small>
-                                    Every exam you take deducts &#8358; from your wallet balance &mdash; be guided
-                                    when taking examinations that we charge per access. You can redeem a coupon by
-                                    entering it in the below textbox.
+                                    Every exam you take deducts 10 CEC from your wallet balance &mdash; be guided
+                                    when taking examinations as we charge per access. You can redeem a coupon by
+                                    entering it in the below textbox. <br />
+                                    <span className='text-primary'>Note: CEC signifies CBTor Exam Credit</span>
                                 </small>
                             </div>
                             { /* redeem coupon form */}

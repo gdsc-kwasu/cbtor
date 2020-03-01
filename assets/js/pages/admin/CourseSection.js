@@ -127,7 +127,7 @@ class CourseSection extends React.Component {
                                     <input type="text" 
                                         className="form-control" 
                                         value={code}
-                                        placeholder="MAT103" 
+                                        placeholder="Course Code" 
                                         onChange={(({ target }) => { onInputChange(target.value, 'code') })} />
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ class CourseSection extends React.Component {
                                     <input type="text" 
                                         className="form-control" 
                                         value={title}
-                                        placeholder="Introduction to Trignometry" 
+                                        placeholder="Course Title" 
                                         onChange={(({ target }) => { onInputChange(target.value, 'title') })} />
                                 </div>
                             </div>
@@ -160,7 +160,7 @@ class CourseSection extends React.Component {
                                         onChange={(({ target }) => { onInputChange(target.value, 'time') })} />
                                     
                                     <span className="form-text small text-muted">
-                                        Duration for standard exam.
+                                        Duration for standard exam (in mins)
                                     </span>    
                                 </div>
                             </div>

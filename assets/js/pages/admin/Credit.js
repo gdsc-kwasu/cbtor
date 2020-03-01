@@ -9,8 +9,8 @@ class Credit extends React.Component {
         super(props)
 
         this.state = {
-            amount: 3,
-            credit: 300,
+            amount: '',
+            credit: '',
             coupons: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -74,7 +74,7 @@ class Credit extends React.Component {
                                     <input type="number" 
                                         className="form-control p-2 small" 
                                         value={amount} 
-                                        placeholder="How many?" 
+                                        placeholder="Quantity of Coupon ?" 
                                         onChange={({ target }) => handleInputChange(target.value, 'amount') } />
                                 </div>
                                 <div className="form-group col-3">

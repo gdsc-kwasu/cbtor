@@ -16,6 +16,10 @@
     height: 100%;
 }
 
+.bg-blue {
+    background-color: $blue;
+}
+
 @include media-breakpoint-down('sm') {
     .bg-student-sm {
         background-image: linear-gradient(rgba(58, 150, 216, 0.9), rgba(58, 150, 216, 0.9)), url('/images/team.jpeg');

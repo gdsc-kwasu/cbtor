@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     },
     pin: {
         textTransform: 'uppercase',
+        textAlign: "center",
         fontSize: 12
     },
     note: {
@@ -56,9 +57,9 @@ const CouponPDF = ({ credits }) => {
                             return (
                                 <View style={styles.section} key={ pin }>
                                     <Text style={styles.heroText}>CBTor Coupon</Text>
-                                    <Text style={styles.header}>{ amount} cec</Text>
+                                    <Text style={styles.header}>{ amount} CEC</Text>
                                     <Text style={styles.pin}>Pin: { pin }</Text>
-                                    <Text style={styles.note}>Note: deduction of 10 cec will be made per exam taken</Text>
+                                    <Text style={styles.note}>Note: deduction of 10 CEC will be made per exam taken</Text>
                                 </View>
                             )
                         })

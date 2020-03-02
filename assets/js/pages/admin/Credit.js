@@ -52,8 +52,10 @@ class Credit extends React.Component {
 
         adminCreateCoupon({ coupons: credits })
             .then(coupons => {
-                this.setState({ coupons })
-                notify('Success', 'Coupons created successfully. Please download and print the PDF.')
+                if (Array.isArray(coupons)) {
+                    this.setState({ coupons })
+                    notify('Success', 'Coupons created successfully. Please download and print the PDF.')
+                }
             })
             .catch(console.log)
 

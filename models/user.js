@@ -34,6 +34,11 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
         default: false,
+    },
+    isSuperAdmin: {
+        type: Boolean,
+        required: true,
+        default: false,
     }
 });
 

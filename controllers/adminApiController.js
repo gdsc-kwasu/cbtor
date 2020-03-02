@@ -20,9 +20,9 @@ exports.uploadQuestion = [questionUploadRule, (req, res, next) => {
 }];
 
 exports.createCoupons = (req, res, next) => {
-    // if (req.user.role < 5) {
-    //     return res.status(400).json({ message: 'You cannot add coupon!'})
-    // }
+    if (!req.user.isSuperAdmin) {
+        return res.status(400).json({ message: 'You cannot add coupon!'})
+    }
 
     Coupon.insertMany(req.body.coupons, { pin: 1, amount: 1, _id: 0, is_used: 0})
         .then((response) => {

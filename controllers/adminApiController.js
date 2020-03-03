@@ -23,10 +23,14 @@ exports.createCoupons = (req, res, next) => {
     if (!req.user.isSuperAdmin) {
         return res.status(400).json({ message: 'You cannot add coupon!'})
     }
+    const credits = req.body.coupons.map(({ pin, amount}) => ({ pin: 
+        pin.split('-').join(''), 
+        amount 
+    }))
 
-    Coupon.insertMany(req.body.coupons, { pin: 1, amount: 1, _id: 0, is_used: 0})
-        .then((response) => {
-            res.json(response)
+    Coupon.insertMany(credits, { pin: 1, amount: 1, _id: 0, is_used: 0})
+        .then(() => {
+            res.json(req.body.coupons)
         })
         .catch(next)
 }

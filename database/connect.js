@@ -4,7 +4,7 @@ const connect = (mongodbURL) => {
     return mongoose.connect(mongodbURL, {
         useNewUrlParser: true,
         useCreateIndex: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: false,
         useFindAndModify: false,
         socketTimeoutMS: 0,
         connectTimeoutMS: 0,

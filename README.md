@@ -1,28 +1,25 @@
 # CBTor
 
-A web based application to help Kwara State University freshmen prepare
-for the first year computerized school examinations, built by the [Developer Student Clubs, KWASU](https://dsckwasu.club).
+A beautiful app built to enable fresh on campus to simulate the Computer-Based exam offered by the University. CBTor offers wonderful user experience and features that enable students to prepare for exams and experience what it is like to take a Computer-based test. 
 
-The application is built with React (as FE) and Node.js/Express (as BE).
+The application is built with Node.js and the React Library
 
 ## Getting Started
 Installing the application (as a developer) is simple in the following steps:
-- Clone this repository and navigate into the cloned directory. If you are a Windows user, we recommend
-that you make use of Git bash.
+- Fork and Clone this repository 
 ```git
 git clone https://github.com/kwasu-ng/cbtor.git && cd cbtor
 ``` 
-- Once you're done cloning, you can install dependencies with NPM or Yarn &mdash; your pick. But
+- Navigate into the cloned directory and install dependencies with NPM or Yarn &mdash; your pick. But
 we go with NPM here.
 ```npm
 npm install
 ``` 
-- Great. Now, make a duplicate of the **env** file and update its content accordingly. Most times,
-this is just fine with no update.
+- Make a duplicate of the **env** file and update its content accordingly. _Most times, this is just fine with no update.
 ```sh
 cp .env.example .env
 ```
-- Then, start the development server, and start developing.
+- Start the development server, _and start developing.
 ```npm
 npm start
 ``` 

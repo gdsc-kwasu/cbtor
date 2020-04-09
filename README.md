@@ -1,8 +1,16 @@
 # CBTor
 
-A beautiful app built to enable fresh on campus to simulate the Computer-Based exam offered by the University. CBTor offers wonderful user experience and features that enable students to prepare for exams and experience what it is like to take a Computer-based test. 
+A beautiful app built to enable freshmen on campus to simulate the Computer-Based exam offered by the University. CBTor offers wonderful user experience and features that enable students to prepare for exams and experience what it is like to take a Computer-based test. 
 
 The application is built with Node.js and the React Library
+
+<p align="center">
+  <a href="https://cbtor.dsckwasu.club">
+    <img src="https://img.shields.io/badge/website-cbtor.dsckwasu.club-blue.svg" alt="CBTor web app">
+  </a>
+</p>
+
+<hr />
 
 ## Getting Started
 Installing the application (as a developer) is simple in the following steps:

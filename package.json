@@ -48,7 +48,7 @@
     "passport-local": "1.0.0",
     "passport-local-mongoose": "5.0.1",
     "prop-types": "15.7.2",
-    "pug": "2.0.4",
+    "pug": "3.0.1",
     "react": "16.9.0",
     "react-countdown-now": "2.1.1",
     "react-dom": "16.9.0",

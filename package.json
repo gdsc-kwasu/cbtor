@@ -57,7 +57,7 @@
     "react-router-dom": "5.1.1",
     "react-spinners": "0.6.1",
     "react-tex": "1.4.0",
-    "validator": "11.1.0"
+    "validator": "13.7.0"
   },
   "devDependencies": {
     "@babel/preset-react": "7.0.0",
